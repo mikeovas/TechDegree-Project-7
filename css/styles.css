@@ -30,11 +30,12 @@ main {
 .bell-icon {
     width: 100px;
     display: flex;
+    margin-left: 15%;
     fill: whitesmoke;
 }
 
 .line-break {
-    border-right: 2px solid gray;
+    border-right: 3px solid rgb(145, 142, 142);
     height: 60%;
     align-self: center;
 }
@@ -53,13 +54,14 @@ main {
 
 /* ================Main Nav Bar ================ */
 
-.bell-icon,
 .icon-home,
 .icon-chart,
 .icon-members,
 .icon-settings {
     height: 50px;
     fill: whitesmoke;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 
