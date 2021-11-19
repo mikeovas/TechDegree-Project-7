@@ -2,7 +2,6 @@
 
 * {
     box-sizing: border-box;
-    color: whitesmoke;
 }
 
 header {
@@ -14,7 +13,7 @@ nav {
 }
 
 main {
-    background-color: rgb(168, 228, 208);
+    background-color: whitesmoke;
 }
 
 
@@ -25,6 +24,7 @@ main {
     margin-top: auto;
     margin-bottom: auto;
     font-size: 40px;
+    color: whitesmoke;
 }
 
 .bell-icon {
