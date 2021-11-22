@@ -1,7 +1,14 @@
-    /* main */
+    /* -------Body----------- */
     
     * {
         box-sizing: border-box;
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas: "header" "navigation" "main";
     }
     
     header {
@@ -11,11 +18,14 @@
     nav {
         background-color: rgb(127, 126, 214);
     }
-    
-    main {
-        background-color: whitesmoke;
-    }
     /* =================== Header================= */
+    
+    .header {
+        color: whitesmoke;
+        grid-area: header;
+        display: flex;
+        align-items: center;
+    }
     
     .header-title {
         margin-left: 2%;
@@ -58,37 +68,6 @@
     }
     /* ================Main Nav Bar ================ */
     
-    .icon-home,
-    .icon-chart,
-    .icon-members,
-    .icon-settings {
-        height: 50px;
-        fill: whitesmoke;
-        margin: 30%;
-    }
-    /* --------Layout ----------*/
-    
-    .temp,
-    .social-image {
-        width: 200px;
-        width: 200px;
-    }
-    /* Grid Layout */
-    
-    .grid-container {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: auto;
-        grid-template-areas: "header" "navigation" "main";
-    }
-    
-    .header {
-        color: whitesmoke;
-        grid-area: header;
-        display: flex;
-        align-items: center;
-    }
-    
     .navigation {
         grid-area: navigation;
         display: flex;
@@ -97,16 +76,73 @@
         align-items: space-evenly;
     }
     
+    .icon-home,
+    .icon-chart,
+    .icon-members,
+    .icon-settings {
+        height: 50px;
+        fill: whitesmoke;
+        margin: 30%;
+    }
+    /*--------Main--------------*/
+    
     .main {
         grid-area: main;
         display: grid;
+        background-color: whitesmoke;
     }
-    /* Flex Layout */
+    /*--------Dashboard---------*/
+    
+    .traffic-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style-type: none;
+        font-size: large;
+    }
+    
+    .headline {
+        text-transform: uppercase;
+    }
+    
+    .main-headline {
+        margin-left: 3%;
+    }
+    
+    .traffic,
+    .daily,
+    .mobile,
+    .social-stats,
+    .members-container,
+    .recent-container,
+    .message,
+    .settings {
+        border-bottom: 2px solid gray;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    /* --------- Social Media ----------*/
+    
+    .temp,
+    .social-image {
+        width: 80px;
+        width: 80px;
+        background-color: rgb(134, 79, 221);
+        border-radius: 50%;
+    }
+    
+    .logo {
+        color: rgb(134, 79, 221);
+        font-weight: 700;
+    }
+    
+    .social-image path {
+        fill: white;
+        align-self: center;
+    }
     
     .social-container {
         display: flex;
-        flex: 0 0 100%;
-        flex-wrap: wrap;
         border: 1px solid gray;
         justify-content: flex-start;
         align-content: center;
