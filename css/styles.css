@@ -95,6 +95,7 @@ nav {
 .main {
     grid-area: main;
     display: grid;
+    /* justify-content: center; */
     background-color: whitesmoke;
 }
 
