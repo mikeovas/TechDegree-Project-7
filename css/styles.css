@@ -11,6 +11,15 @@
     grid-template-areas: "header" "navigation" "main";
 }
 
+.traffic,
+.daily,
+.mobile,
+.social-stats,
+.members-container,
+.recent-container {
+    border-bottom: 2px solid gray;
+}
+
 
 /* =================== Header================= */
 
@@ -20,6 +29,7 @@
     grid-area: header;
     display: flex;
     align-items: center;
+    height: 7em;
 }
 
 .header-title {
@@ -116,30 +126,6 @@
     margin-left: 3%;
 }
 
-.traffic,
-.daily,
-.mobile,
-.social-stats,
-.members-container,
-.recent-container {
-    border-bottom: 2px solid gray;
-}
-
-.member-1,
-.member-2,
-.member-3,
-.message,
-.settings {
-    border-bottom: 2px solid gray;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.member-4 {
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
 
 /* --------- Social Media ----------*/
 
@@ -185,23 +171,46 @@
     height: 7em;
 }
 
+.member-1,
+.member-2,
+.member-3,
+.message,
+.settings {
+    border-bottom: 2px solid gray;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.member-4 {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 .members-container {
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
 }
 
-.members-text {
+
+/* .members-text {
     text-align: center;
-}
+} */
 
 .member-1,
 .member-2,
 .member-3,
 .member-4 {
     flex-basis: 100%;
-    /* justify-content: center; */
     text-align: center;
+    margin-top: 1em;
+}
+
+.members-text p {
+    margin-bottom: 4px;
+}
+
+.member-date {
+    margin-top: 4px;
 }
 
 
