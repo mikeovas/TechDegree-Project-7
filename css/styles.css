@@ -129,6 +129,14 @@
 
 /* --------- Social Media ----------*/
 
+.social-container {
+    display: flex;
+    border: 2px solid gray;
+    border-radius: 15px;
+    justify-content: flex-start;
+    margin: 5% 3%;
+}
+
 .social-image {
     width: 130px;
     height: 130px;
@@ -137,14 +145,6 @@
     fill: white;
     border-radius: 50%;
     margin: 25%;
-}
-
-.social-container {
-    display: flex;
-    border: 2px solid gray;
-    border-radius: 15px;
-    justify-content: flex-start;
-    margin: 5% 3%;
 }
 
 .social-text {
@@ -166,10 +166,18 @@
 
 /*-----------New Members-----------*/
 
+.members-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .profile-image {
     border-radius: 50%;
     height: 7em;
 }
+
+
+/* added .message and .settings to this section in order to keep the code less repetetive */
 
 .member-1,
 .member-2,
@@ -179,27 +187,14 @@
     border-bottom: 2px solid gray;
     margin-left: 5%;
     margin-right: 5%;
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 1em;
 }
 
 .member-4 {
     margin-left: 5%;
     margin-right: 5%;
-}
-
-.members-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-/* .members-text {
-    text-align: center;
-} */
-
-.member-1,
-.member-2,
-.member-3,
-.member-4 {
     flex-basis: 100%;
     text-align: center;
     margin-top: 1em;
