@@ -112,6 +112,7 @@
 .headline {
     text-transform: uppercase;
     margin-left: 3%;
+    margin-right: 3%;
 }
 
 
@@ -200,6 +201,11 @@
     flex-direction: column;
 }
 
+.recent-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .profile-image {
     border-radius: 50%;
     height: 7em;
@@ -243,43 +249,71 @@
 }
 
 
-/*-----------------Recent Activity ---------------*/
+/*-----------------Messaging & Settings ------------*/
 
-.recent-container {
+.messaging-container,
+.settings-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.message-widget,
+.settings {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field,
+.form-area,
+.button-primary,
+.button-disabled {
+    margin-bottom: 5%;
+    border-radius: 5px;
+    font-size: 0.55rem;
+    min-height: 30px;
+    background-color: rgb(236, 235, 235);
+}
+
+.button-primary {
+    background-color: rgb(170, 152, 221);
+}
+
+.button-disabled {
+    background: rgb(192, 191, 191);
+}
+
+[placeholder] {
+    padding-left: 5px;
 }
 
 
 /* ---------------Media Queries--------------------*/
 
 
-/* @media (min-width: 768px) {
-        .grid-container {
-            grid-template-columns: 75px 1fr;
-            grid-template-areas: "header header" "navigation main";
-        }
-        .main {
-            grid-template-columns: 50%;
-        }
-        .daily {
-            grid-column: 1 / span 1;
-        }
-        .mobile {
-            grid-column: 2 / span 1;
-        }
-        
-        .daily,
-        .members,
-        .message {
-            grid-column: 1 / span 1;
-        }
-        .temp {
-            grid-column: 2 / span 1;
-        }
-        .mobile,
-        .recent-container,
-        .settings {
-            grid-column: 2 / span 1;
-        } 
-    } */
+/* 
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: "header header" "navigation main";
+    }
+    .main {
+        grid-template-columns: 50%;
+    }
+    .traffic,
+    .social {
+        grid-column: 1 / span 2;
+    }
+    .daily,
+    .members,
+    .message {
+        grid-column: 1 / span 1;
+    }
+    .mobile,
+    .activity,
+    .settings {
+        grid-column: 2 / span 1;
+    }
+    .widget-container-full .widget-container-half {
+        width: 95vw;
+    }
+} */
