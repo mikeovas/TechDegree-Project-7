@@ -21,6 +21,15 @@
     .message {
         border-bottom: 2px solid rgb(202, 200, 200);
     }
+    
+    .traffic,
+    .daily,
+    .mobile,
+    .social,
+    .members-recent,
+    .messaging-settings {
+        grid-column: 1 / span 2;
+    }
     /* =================== Header================= */
     
     .header {
@@ -114,10 +123,16 @@
         margin-left: 3%;
     }
     
-    .dashboard {
+    .upper-dash {
         display: flex;
         flex-direction: row;
-        flex-basis: 100%;
+    }
+    
+    .alert-banner {
+        background-color: aqua;
+        border: 2px solid aqua;
+        height: 50px;
+        margin: 5%;
     }
     
     .tab {
@@ -272,14 +287,14 @@
         padding-left: 5px;
     }
     /* ---------------Media Queries--------------------*/
-    /*     
+    
     @media (min-width: 768px) {
         .grid-container {
             grid-template-columns: 55px 1fr;
             grid-template-areas: "header header" "navigation main";
         }
         .header {
-            justify-content: flex-end;
+            justify-content: flex-start;
         }
         .profile-pic {
             margin: 1px;
@@ -312,4 +327,4 @@
             height: 20 vw;
             width: 20vw;
         }
-    } */
+    }
