@@ -35,9 +35,10 @@
     
     .header {
         color: whitesmoke;
-        background-color: rgb(170, 152, 221);
+        background-color: rgb(143, 116, 218);
         grid-area: header;
         display: flex;
+        flex-direction: row;
         align-items: center;
         height: 5rem;
     }
@@ -49,15 +50,16 @@
     
     .header-name {
         margin-right: 2%;
-        font-size: 0.75rem;
+        margin-left: 2%;
+        font-size: 0.8rem;
     }
     
     .bell-icon {
         display: flex;
         justify-content: flex-end;
-        width: 25%;
-        height: 25%;
-        margin-left: 2%;
+        width: 30%;
+        height: 30%;
+        margin-left: 15%;
         fill: whitesmoke;
     }
     
@@ -70,8 +72,8 @@
     
     .profile-pic {
         border-radius: 50%;
-        height: 40%;
-        margin: auto;
+        height: 50%;
+        margin-left: 2%;
     }
     
     .notification-dot {
@@ -83,7 +85,7 @@
     /* ================Main Nav Bar ================ */
     
     .navigation {
-        background-color: rgb(127, 126, 214);
+        background-color: rgb(75, 74, 150);
         grid-area: navigation;
         height: 4rem;
         display: flex;
@@ -118,6 +120,7 @@
     
     .temp {
         height: 250px;
+        margin-left: 5%;
     }
     
     .main-headline {
@@ -130,8 +133,8 @@
     }
     
     .alert-banner {
-        background-color: rgb(153, 0, 255);
-        border: 2px solid rgb(153, 0, 255);
+        background-color: rgb(205, 146, 245);
+        border: 2px solid rgb(205, 146, 245);
         height: 50px;
         margin: 5%;
         border-radius: 5px;
@@ -143,6 +146,10 @@
         border-left: 2px solid darkgray;
         border-bottom: 2px solid darkgray;
         margin-left: 5%;
+    }
+    
+    .two-rows {
+        grid-column: 1 / span 2;
     }
     
     .traffic-nav {
@@ -166,25 +173,30 @@
     .social-images {
         display: flex;
         flex-direction: row;
-        background-color: rgb(134, 79, 221);
+        background-color: rgb(143, 116, 218);
         height: 100px;
         width: 100px;
         border-radius: 50%;
         margin: auto 5%;
     }
     
-    .social-image {
+    .social-images svg {
         width: 100px;
         height: 100px;
         padding: 25%;
     }
     
-    .social-image path {
+    .social-images path {
         fill: white;
     }
     
     .social-text {
         margin: 5% 5%;
+    }
+    
+    .brand {
+        color: rgb(143, 116, 218);
+        font-size: 1.1rem;
     }
     
     .number {
@@ -204,12 +216,7 @@
         margin-top: 1em;
     }
     
-    .member-1,
-    .member-2,
-    .member-3,
-    .recent-1,
-    .recent-2,
-    .recent-3 {
+    .border-bottom {
         border-bottom: 2px solid gray;
         margin-left: 5%;
         margin-right: 5%;
@@ -217,13 +224,9 @@
         margin-top: 1em;
     }
     
-    .member-4,
-    .recent-4 {
-        margin-left: 5%;
-        margin-right: 5%;
-        flex-basis: 100%;
-        text-align: center;
-        margin-top: 1em;
+    .member:last-of-type,
+    .recent:last-of-type {
+        border: none;
     }
     
     .members-text p {
@@ -295,38 +298,58 @@
             grid-template-columns: 55px 1fr;
             grid-template-areas: "header header" "navigation main";
         }
-        .header {
-            justify-content: flex-start;
-        }
         .profile-pic {
             margin: 1px;
         }
         .header-name {
-            margin-left: 5px;
-            margin-right: 5px;
+            margin-left: 2%;
+            margin-right: 2%;
+            font-size: .8em;
         }
         .header-title {
-            margin-right: 40%;
+            margin-right: 16%;
         }
         .navigation {
             display: flex;
             flex-direction: column;
             height: auto;
-            align-items: flex-start;
+            justify-content: flex-start;
         }
-        .traffic,
-        .social,
+        .icon-home,
+        .icon-chart,
+        .icon-members,
+        .icon-settings {
+            padding: 5%;
+            margin-top: 10px;
+        }
+        .two-rows {
+            display: grid;
+            grid-template-columns: 1 fr 1fr;
+        }
+        .daily {
+            grid-column: 1 / 2;
+        }
+        .mobile {
+            grid-column: 2 / 3;
+        }
         .members-recent,
         .messaging-settings {
             grid-column: 1 / span 2;
         }
         .social-container {
-            width: 50vw;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .social-images,
+        .social-images svg {
+            height: 80px;
+            width: 80px;
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .traffic {
             display: flex;
             flex-direction: row;
-        }
-        .social-image {
-            height: 20 vw;
-            width: 20vw;
         }
     }
