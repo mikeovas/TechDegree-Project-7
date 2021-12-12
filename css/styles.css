@@ -204,11 +204,10 @@
         margin: 1% auto 30%;
     }
     /*-----------New Members & Recent Activity-----------*/
-    
-    .members-recent {
+    /* .members-recent {
         display: flex;
         flex-direction: column;
-    }
+    } */
     
     .profile-image {
         border-radius: 50%;
@@ -344,6 +343,10 @@
         .social-images svg {
             height: 80px;
             width: 80px;
+        }
+        .brand-container {
+            margin: 5% 2%;
+            padding: 2%;
         }
     }
     
