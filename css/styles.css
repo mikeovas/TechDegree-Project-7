@@ -409,10 +409,6 @@
         margin-right: 5%;
         width: 50px;
     }
-    /* .recent-container {
-        display: flex;
-        flex-direction: column;
-    } */
     .recent {
         display: flex;
         flex-direction: row;
@@ -421,8 +417,16 @@
     .recent-text {
         display: flex;
         flex-direction: column;
-        margin-right: 5%;
+        text-align: start;
+        margin-top: 5%;
     }
+    .recent-text p:nth-child(2) {
+        margin-top: 0%;
+    }
+    /* .recent-container {
+        display: flex;
+        flex-direction: column;
+    } */
     /* .recent-text {
         width: 50%;
         justify-content: flex-start;
@@ -439,9 +443,7 @@
     .recent-text p:nth-child(2) {
         margin-top: 0%;
     }
-       .recent-text p:nth-child(2) {
-        margin-top: 0%;
-    }*/
+*/
     .hidden {
         visibility: visible;
     }
