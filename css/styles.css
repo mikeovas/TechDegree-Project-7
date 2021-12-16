@@ -423,6 +423,9 @@
     .recent-text p:nth-child(2) {
         margin-top: 0%;
     }
+    .hidden {
+        visibility: visible;
+    }
     /* .recent-container {
         display: flex;
         flex-direction: column;
@@ -444,9 +447,6 @@
         margin-top: 0%;
     }
 */
-    .hidden {
-        visibility: visible;
-    }
 }
 
 @media (min-width: 1024px) {
