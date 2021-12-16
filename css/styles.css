@@ -416,12 +416,12 @@
     .recent {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
     .recent-text {
         display: flex;
         flex-direction: column;
-        align-content: flex-start;
+        margin-right: 5%;
     }
     /* .recent-text {
         width: 50%;
