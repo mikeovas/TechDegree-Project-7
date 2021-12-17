@@ -271,15 +271,15 @@
 .form-field,
 .form-area,
 .button {
-    margin-bottom: 4%;
+    margin-bottom: 2.5%;
     border-radius: 5px;
     font-size: 0.55rem;
-    min-height: 30px;
+    min-height: 40px;
     background-color: rgb(236, 235, 235);
 }
 
 .form-area {
-    min-height: 80px;
+    min-height: 100px;
 }
 
 .settings-button {
@@ -366,6 +366,13 @@
     .mobile {
         grid-column: 2 / 3;
     }
+    .daily .headline,
+    .mobile .headline {
+        padding-left: 5%;
+    }
+    .daily {
+        border-right: 2px solid gray;
+    }
     /* --------- Social Media ----------*/
     .social-container {
         display: grid;
@@ -399,11 +406,6 @@
     .profile-image {
         margin: 2% 5% 5%;
     }
-    .members-text {
-        margin-right: 40%;
-        margin-top: 3%;
-        width: 150px;
-    }
     .members-date {
         margin-top: 5%;
         margin-right: 5%;
@@ -412,13 +414,15 @@
     .recent {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between;
     }
+    .members-text,
     .recent-text {
         display: flex;
         flex-direction: column;
+        flex-basis: 80%;
         text-align: start;
-        margin-top: 5%;
+        margin-top: 4%;
     }
     .recent-text p:nth-child(1) {
         margin-bottom: 2px;
@@ -428,6 +432,12 @@
     }
     .hidden {
         visibility: visible;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: center;
+        margin-right: 5%;
+        color: rgb(54, 54, 218);
     }
     /* .recent-container {
         display: flex;
