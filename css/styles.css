@@ -143,7 +143,7 @@
     background-color: rgb(205, 146, 245);
     border: 2px solid rgb(205, 146, 245);
     height: 50px;
-    margin: 5%;
+    margin: 2% 5%;
     border-radius: 5px;
 }
 
@@ -165,6 +165,10 @@
     justify-content: space-around;
     list-style-type: none;
     font-size: 1rem;
+}
+
+.traffic-header .headline {
+    flex-basis: 15%;
 }
 
 
@@ -327,7 +331,7 @@
         font-size: .8em;
     }
     .header-title {
-        margin-right: 16%;
+        flex-basis: 25%;
     }
     /*---------- Main Nav Bar ----------*/
     .navigation {
@@ -354,8 +358,8 @@
         flex-direction: row;
         justify-content: flex-start;
     }
-    .traffic-header h3 {
-        margin-right: 45%;
+    .traffic-header .headline {
+        flex-basis: 50%;
     }
     .traffic-nav li {
         margin: 5%;
@@ -439,32 +443,17 @@
         margin-right: 5%;
         color: rgb(54, 54, 218);
     }
-    /* .recent-container {
-        display: flex;
-        flex-direction: column;
-    } */
-    /* .recent-text {
-        width: 50%;
-        justify-content: flex-start;
-    } */
-    /*.recent-text {
-            /* display: flex;
-            flex-direction: column;
-            align-content: center;
-            justify-content: flex-start;
-        margin-right: 20%;
-        max-width: 75%;
-    }
-    
-    .recent-text p:nth-child(2) {
-        margin-top: 0%;
-    }
-*/
 }
 
 @media (min-width: 1024px) {
-    .traffic {
-        display: flex;
+    .traffic-header {
         flex-direction: row;
+        justify-content: flex-start;
+    }
+    .traffic-header .headline {
+        flex-basis: 60%;
+    }
+    .header-title {
+        flex-basis: 30%;
     }
 }
