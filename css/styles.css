@@ -376,7 +376,7 @@
             margin: 5% 2%;
             padding: 2%;
         }
-        /*------------Members & recent Activity -------------*/
+        /*------------Members & Recent Activity -------------*/
         .members-recent,
         .messaging-settings {
             grid-column: 1 / span 2;
@@ -450,10 +450,27 @@
         .members-container {
             border-right: 2px solid rgb(145, 142, 142);
         }
-        /* .member,
-        .recent {
+        /*---------- Messaging ----------*/
+        .messaging-settings {
             display: flex;
-            align-content: center;
-            height: 22.5%;
-        } */
+            flex-direction: row;
+        }
+        .message,
+        .settings {
+            flex-basis: 50%;
+        }
+        .message {
+            border-right: 2px solid rgb(145, 142, 142);
+        }
+        .settings {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        #timezone {
+            margin: 0% 4%;
+        }
+        .save,
+        .disabled {
+            margin: 2% 4%;
+        }
     }
