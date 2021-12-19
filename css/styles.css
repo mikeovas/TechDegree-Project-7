@@ -176,7 +176,7 @@
 
 .brand-container {
     display: flex;
-    border: 2px solid gray;
+    border: 2px solid rgb(145, 142, 142);
     background: rgb(236, 235, 235);
     border-radius: 15px;
     margin: 5% 5%;
@@ -222,7 +222,7 @@
 .profile-image {
     border-radius: 50%;
     height: 7em;
-    margin-top: 1em;
+    margin-top: 0.5rem;
 }
 
 .members-recent {
@@ -233,7 +233,7 @@
 
 .member,
 .recent {
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid rgb(145, 142, 142);
     justify-content: space-between;
     text-align: center;
     margin-top: 1em;
@@ -446,6 +446,11 @@
 }
 
 @media (min-width: 1024px) {
+    /*---------- Header ---------- */
+    .header-title {
+        flex-basis: 30%;
+    }
+    /*---------- Charts ----------*/
     .traffic-header {
         flex-direction: row;
         justify-content: flex-start;
@@ -453,7 +458,16 @@
     .traffic-header .headline {
         flex-basis: 60%;
     }
-    .header-title {
-        flex-basis: 30%;
+    /*------------Members & Recent Activity -------------*/
+    .members-recent {
+        display: flex;
+        flex-direction: row;
+    }
+    .members-container,
+    .recent-container {
+        flex-basis: 50%;
+    }
+    .members-container {
+        border-right: 2px solid rgb(145, 142, 142);
     }
 }
