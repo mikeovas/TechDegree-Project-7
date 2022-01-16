@@ -132,17 +132,18 @@
     }
     
     .alert-banner {
-        background-color: rgb(205, 146, 245);
-        border: 2px solid rgb(205, 146, 245);
+        background-color: rgb(114, 127, 197);
+        border: 2px solid rgb(114, 127, 197);
+        color: whitesmoke;
         height: 50px;
-        margin: 2% 5%;
+        margin: 2% 4%;
         border-radius: 5px;
         display: flex;
         justify-content: space-between;
     }
     
     .alert-banner p {
-        padding: 0 5%;
+        padding: 0 4%;
     }
     
     .tab {
@@ -161,13 +162,20 @@
     .traffic-nav {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
+        padding-right: 10%;
         list-style-type: none;
         font-size: 1rem;
     }
+    /* .traffic-header .headline {
+        flex-basis: 45%;
+    } */
     
-    .traffic-header .headline {
-        flex-basis: 15%;
+    .active {
+        background-color: rgb(108, 218, 122);
+        border-radius: 25px;
+        padding: 3%;
+        color: whitesmoke;
     }
     
     .widget-container-full,

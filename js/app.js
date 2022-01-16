@@ -12,4 +12,16 @@ alertBanner.addEventListener('click', e => {
     }
 });
 
-const trafficCanvas = document.getElementById("traffic-chart");
+const trafficNavLi = document.getElementsByClassName('traffic-nav-link');
+
+
+const activeLi = document.getElementsByClassName('active');
+console.log(activeLi);
+
+
+trafficNavLi.addEventListener('click', (e) => {
+    for (i = 0; i < activeLi.length; i++) {
+        activeLi[i].classList.remove('active');
+    }
+    e.target.classList.add('active');
+});
