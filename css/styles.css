@@ -167,9 +167,6 @@
         list-style-type: none;
         font-size: 1rem;
     }
-    /* .traffic-header .headline {
-        flex-basis: 45%;
-    } */
     
     .active {
         background-color: rgb(108, 218, 122);
