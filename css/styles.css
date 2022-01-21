@@ -171,7 +171,7 @@
     .active {
         background-color: rgb(108, 218, 122);
         border-radius: 25px;
-        padding: 1%;
+        padding: 1.2% 5%;
         color: whitesmoke;
     }
     

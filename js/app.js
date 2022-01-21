@@ -12,13 +12,13 @@ alertBanner.addEventListener('click', e => {
     }
 });
 
-const activeLi = document.getElementsByClassName('active');
+// const activeLi = document.getElementsByClassName('active');
 
-document.querySelectorAll('.traffic-nav-link').forEach(item => {
-    item.addEventListener('click', (e) => {
-        for (i = 0; i < activeLi.length; i++) {
-            activeLi[i].classList.remove('active');
-        }
-        e.target.classList.add('active');
-    });
-});
+// document.querySelectorAll('.traffic-nav-link').forEach(item => {
+//     item.addEventListener('click', (e) => {
+//         for (i = 0; i < activeLi.length; i++) {
+//             activeLi[i].classList.remove('active');
+//         }
+//         e.target.classList.add('active');
+//     });
+// });
