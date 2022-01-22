@@ -66,8 +66,8 @@ let trafficWeeklyData = weekly.datasets[0].data;
 let trafficMonthlyLabel = monthly.labels;
 let trafficMonthlyData = monthly.datasets[0].data;
 
-let weeklyDataSets = weekly.datasets;
-console.log(weeklyDataSets);
+let initialDataSets = weekly.datasets;
+console.log(initialDataSets);
 
 // /------------Function to Swap Chart Data Based on Selection-------/
 function swapData(chart, labels, data) {
@@ -92,29 +92,36 @@ function swapData(chart, labels, data) {
 trafficNavLinks.forEach(item => {
     item.addEventListener('click', (e) => {
         let click = e.target;
-        console.log(click);
+        console.log(click); // checks that my click is targetting the correct link
+
         for (i = 0; i < trafficNavLinks.length; i++) {
             trafficNavLinks[i].classList.remove('active');
+
+            if (click.innerText === 'hourly') {
+                swapData(trafficLine, trafficHourlyLabel, trafficHourlyData);
+                console.log(chart.data.labels); // check new labels
+                console.log(chart.data.datasets[0].data); //check new data
+
+            } else if (click.innerText === 'daily') {
+                swapData(trafficLine, trafficDailyLabel, trafficDailyData);
+                console.log(chart.data.labels); // check new labels
+                console.log(chart.data.datasets[0].data); //check new data
+
+            } else if (click.innerText === 'weekly') {
+                swapData(trafficLine, trafficWeeklyLabel, trafficWeeklyData);
+                console.log(chart.data.labels); // check new labels
+                console.log(chart.data.datasets[0].data); //check new data
+
+            } else(click.innerText === 'monthly')
+            swapData(trafficLine, trafficMonthlyLabel, trafficMonthlyData);
+            console.log(chart.data.labels); // check new labels
+            console.log(chart.data.datasets[0].data); //check new data
         }
         click.classList.add('active');
-
-        if (click.innerText === 'hourly') {
-            swapData(trafficLine, trafficHourlyLabel, trafficHourlyData);
-        } else if (click.innerText === 'daily') {
-            swapData(trafficLine, trafficDailyLabel, trafficDailyData);
-        } else if (click.innerText === 'weekly') {
-            swapData(trafficLine, trafficWeeklyLabel, trafficWeeklyData);
-        } else(click.innerText === 'monthly')
-        swapData(trafficLine, trafficMonthlyLabel, trafficMonthlyData);
-
     });
 });
 
 
-
-
-console.log(trafficWeeklyData);
-console.log(trafficWeeklyLabel);
 
 // /-----------Create Traffic Charts---------/
 
@@ -123,7 +130,7 @@ const trafficLine = new Chart(ctx, {
     type: 'line',
     data: {
         labels: trafficWeeklyLabel,
-        datasets: weeklyDataSets,
+        datasets: initialDataSets,
 
     },
     options: {
