@@ -91,34 +91,43 @@ function swapData(chart, labels, data) {
 
 trafficNavLinks.forEach(item => {
     item.addEventListener('click', (e) => {
-        let click = e.target;
-        console.log(click); // checks that my click is targetting the correct link
+            let click = e.target;
+            console.log(click.innerText); // checks that my click is targetting the correct link
 
-        for (i = 0; i < trafficNavLinks.length; i++) {
-            trafficNavLinks[i].classList.remove('active');
+            for (i = 0; i < trafficNavLinks.length; i++) {
+                trafficNavLinks[i].classList.remove('active');
+                click.classList.add('active');
+            }
+            //seems to work up to this point. It will change the active class and it is targetting the click as seen from line 95
 
             if (click.innerText === 'hourly') {
                 swapData(trafficLine, trafficHourlyLabel, trafficHourlyData);
-                console.log(chart.data.labels); // check new labels
-                console.log(chart.data.datasets[0].data); //check new data
+                console.log('clicked on hourly');
+                // console.log(chart.data.labels); // check new labels
+                // console.log(chart.data.datasets[0].data); //check new data
 
             } else if (click.innerText === 'daily') {
                 swapData(trafficLine, trafficDailyLabel, trafficDailyData);
-                console.log(chart.data.labels); // check new labels
-                console.log(chart.data.datasets[0].data); //check new data
+                console.log('clicked on dailly');
+                // console.log(chart.data.labels); // check new labels
+                // console.log(chart.data.datasets[0].data); //check new data
 
             } else if (click.innerText === 'weekly') {
                 swapData(trafficLine, trafficWeeklyLabel, trafficWeeklyData);
-                console.log(chart.data.labels); // check new labels
-                console.log(chart.data.datasets[0].data); //check new data
+                console.log('clicked on weekly');
+                // console.log(chart.data.labels); // check new labels
+                // console.log(chart.data.datasets[0].data); //check new data
 
             } else(click.innerText === 'monthly')
             swapData(trafficLine, trafficMonthlyLabel, trafficMonthlyData);
-            console.log(chart.data.labels); // check new labels
-            console.log(chart.data.datasets[0].data); //check new data
+            console.log('clicked on monthly');
+            // console.log(chart.data.labels); // check new labels
+            // console.log(chart.data.datasets[0].data); //check new data
+
+
         }
-        click.classList.add('active');
-    });
+
+    );
 });
 
 
