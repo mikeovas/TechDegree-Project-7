@@ -97,7 +97,7 @@ trafficNavLinks.forEach(item => {
             for (i = 0; i < trafficNavLinks.length; i++) {
                 trafficNavLinks[i].classList.remove('active');
                 click.classList.add('active');
-            }
+            };
             //seems to work up to this point. It will change the active class and it is targetting the click as seen from line 95
 
             if (click.innerText === 'hourly') {
