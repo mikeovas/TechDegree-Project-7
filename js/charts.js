@@ -1,12 +1,12 @@
-let trafficNav = document.querySelectorAll(".traffic-nav");
-let trafficNavLinks = document.querySelectorAll(".traffic-nav-link");
-const ctx = document.getElementById("traffic-chart").getContext('2d');
+const trafficNav = document.querySelectorAll(".traffic-nav");
+const trafficNavLinks = document.querySelectorAll(".traffic-nav-link");
+const trafficChart = document.querySelector("#traffic-chart").getContext('2d');
 
 
 
 
 // /----------------Chart Data----------------/
-let hourly = {
+const hourly = {
     labels: ['8am-9am', '9am-10am', '10am-11am', '11am-12pm', '12pm-1pm', '1pm-2pm', '2pm-3pm', '3pm-4pm', '4pm-5pm', '5pm-6pm'],
     datasets: [{
         data: [5, 20, 45, 55, 65, 125, 100, 75, 70, 50],
@@ -47,7 +47,7 @@ let hourly = {
     }
 };
 
-let daily = {
+const daily = {
     labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     datasets: [{
         data: [75, 125, 225, 250, 200, 150, 100],
@@ -88,7 +88,7 @@ let daily = {
     }
 };
 
-let weekly = {
+const weekly = {
     labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
     datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1800, 2250, 1500, 2500],
@@ -129,7 +129,7 @@ let weekly = {
     }
 };
 
-let monthly = {
+const monthly = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     datasets: [{
         data: [7500, 12550, 15500, 20000, 25000, 28750, 29000, 30000, 32500, 31500, 31000],
@@ -172,31 +172,33 @@ let monthly = {
 };
 
 // /------------Variables for Swapping Chart Data---------/ 
-let trafficHourlyLabel = hourly.labels;
-let trafficHourlyData = hourly.datasets[0].data;
-let trafficHourlyOptions = hourly.options;
+const trafficHourlyLabel = hourly.labels;
+const trafficHourlyData = hourly.datasets;
+const trafficHourlyOptions = hourly.options;
 
-let trafficDailyLabel = daily.labels;
-let trafficDailyData = daily.datasets[0].data;
-let trafficDailyOptions = daily.options;
+const trafficDailyLabel = daily.labels;
+const trafficDailyData = daily.datasets;
+const trafficDailyOptions = daily.options;
 
-let trafficWeeklyLabel = weekly.labels
-let trafficWeeklyData = weekly.datasets[0].data;
-let trafficWeeklyOptions = weekly.options;
+const trafficWeeklyLabel = weekly.labels
+const trafficWeeklyData = weekly.datasets;
+const trafficWeeklyOptions = weekly.options;
 
-let trafficMonthlyLabel = monthly.labels;
-let trafficMonthlyData = monthly.datasets[0].data;
-let trafficMonthlyOptions = monthly.options;
+const trafficMonthlyLabel = monthly.labels;
+const trafficMonthlyData = monthly.datasets;
+const trafficMonthlyOptions = monthly.options;
 
-let initialLabels = weekly.labels;
-let initialDataSets = weekly.datasets;
-let initialOptions = weekly.options;
+const initialLabels = weekly.labels;
+const initialDataSets = weekly.datasets;
+const initialOptions = weekly.options;
 
 
 // /-----------Function to Create Traffic Charts---------/
 
+
 function createTrafficLineChart(labels, data, options) {
-    const trafficLine = new Chart(ctx, {
+
+    const trafficLine = new Chart(trafficChart, {
         type: 'line',
         data: {
             labels: trafficWeeklyLabel,
@@ -206,106 +208,31 @@ function createTrafficLineChart(labels, data, options) {
     });
 };
 
+
+
+
 // /----------Create Initail Traffic Charts---------/
 createTrafficLineChart(initialLabels, initialDataSets, initialOptions);
 
 // /----------Create New Traffic Chart based on Choice---------/
 trafficNavLinks.forEach(item => {
     item.addEventListener('click', (e) => {
-        let click = e.target;
-        console.log('clicked on ' + click.innerText); // checks that my click is targetting the correct link
+        const click = e.target;
 
         for (i = 0; i < trafficNavLinks.length; i++) {
             trafficNavLinks[i].classList.remove('active');
             click.classList.add('active');
         };
 
-        if (click.innerText === 'hourly') {
-
-            console.log('clicked innerText is hourly');
-            // console.log(chart.data.labels); // check new labels
-            // console.log(chart.data.datasets[0].data); //check new data
-
-        } else if (click.innerText === 'daily') {
-
-            console.log('clicked innerText is daily');
-            // console.log(chart.data.labels); // check new labels
-            // console.log(chart.data.datasets[0].data); //check new data
-
-        } else if (click.innerText === 'weekly') {
-
-            console.log('clicked innerText is weekly');
-            // console.log(chart.data.labels); // check new labels
-            // console.log(chart.data.datasets[0].data); //check new data
-
+        if (click.innerText === 'Hourly') {
+            createTrafficLineChart(trafficHourlyLabel, trafficHourlyData, trafficHourlyOptions);
+        } else if (click.innerText === 'Daily') {
+            createTrafficLineChart(trafficDailyLabel, trafficDailyData, trafficDailyOptions);
+        } else if (click.innerText === 'Weekly') {
+            createTrafficLineChart(trafficWeeklyLabel, trafficWeeklyData, trafficWeeklyOptions);
         } else {
-
-            console.log('clicked innerText is monthly');
-            // console.log(chart.data.labels); // check new labels
-            // console.log(chart.data.datasets[0].data); //check new data
+            createTrafficLineChart(trafficMonthlyLabel, trafficMonthlyData, trafficMonthlyOptions);
         }
 
     });
 });
-
-
-// /------------Function to Swap Chart Data Based on Selection-------/
-// function swapData(chart, labels, data) {
-
-//     console.log(chart.data.labels); //check initial labels
-//     console.log(chart.data.datasets[0].data); //check initial data
-
-//     chart.data.labels = []; // clear chart labels
-//     chart.data.datasets[0].data = []; // clear chart data
-
-//     console.log(chart.data.labels); // check chart labels cleared
-//     console.log(chart.data.datasets[0].data); // check chart data cleared
-
-//     for (i = 0; i < labels.length; i++) {
-//         chart.data.labels.push(labels[i]);
-//         chart.data.datasets[0].data.push(data[i]);
-//     }
-//     console.log(chart.data.labels); // check new labels
-//     console.log(chart.data.datasets[0].data); //check new data
-// };
-
-// trafficNavLinks.forEach(item => {
-//     item.addEventListener('click', (e) => {
-//             let click = e.target;
-//             console.log(click.innerText); // checks that my click is targetting the correct link
-
-//             for (i = 0; i < trafficNavLinks.length; i++) {
-//                 trafficNavLinks[i].classList.remove('active');
-//                 click.classList.add('active');
-//             };
-//             //seems to work up to this point. It will change the active class and it is targetting the click as seen from line 95
-
-//             if (click.innerText === 'hourly') {
-//                 swapData(trafficLine, trafficHourlyLabel, trafficHourlyData);
-//                 console.log('clicked on hourly');
-//                 // console.log(chart.data.labels); // check new labels
-//                 // console.log(chart.data.datasets[0].data); //check new data
-
-//             } else if (click.innerText === 'daily') {
-//                 swapData(trafficLine, trafficDailyLabel, trafficDailyData);
-//                 console.log('clicked on dailly');
-//                 // console.log(chart.data.labels); // check new labels
-//                 // console.log(chart.data.datasets[0].data); //check new data
-
-//             } else if (click.innerText === 'weekly') {
-//                 swapData(trafficLine, trafficWeeklyLabel, trafficWeeklyData);
-//                 console.log('clicked on weekly');
-//                 // console.log(chart.data.labels); // check new labels
-//                 // console.log(chart.data.datasets[0].data); //check new data
-
-//             } else(click.innerText === 'monthly')
-//             swapData(trafficLine, trafficMonthlyLabel, trafficMonthlyData);
-//             console.log('clicked on monthly');
-//             // console.log(chart.data.labels); // check new labels
-//             // console.log(chart.data.datasets[0].data); //check new data
-
-
-//         }
-
-//     );
-// });
