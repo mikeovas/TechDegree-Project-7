@@ -193,12 +193,24 @@ const initialDataSets = weekly.datasets;
 const initialOptions = weekly.options;
 
 
-// /-----------Function to Create Traffic Charts---------/
+// /-----------Functions to Create Traffic Charts---------/
 
+
+function createInitialTrafficLineChart(labels, data, options) {
+
+    let trafficLine = new Chart(trafficChart, {
+        type: 'line',
+        data: {
+            labels: trafficWeeklyLabel,
+            datasets: initialDataSets,
+        },
+        options: trafficWeeklyOptions,
+    });
+};
 
 function createTrafficLineChart(labels, data, options) {
 
-    const trafficLine = new Chart(trafficChart, {
+    let trafficLine = new Chart(trafficChart, {
         type: 'line',
         data: {
             labels: trafficWeeklyLabel,
@@ -211,8 +223,11 @@ function createTrafficLineChart(labels, data, options) {
 
 
 
-// /----------Create Initail Traffic Charts---------/
-createTrafficLineChart(initialLabels, initialDataSets, initialOptions);
+
+
+
+// /----------Create Initial Traffic Charts---------/
+createInitialTrafficLineChart(initialLabels, initialDataSets, initialOptions);
 
 // /----------Create New Traffic Chart based on Choice---------/
 trafficNavLinks.forEach(item => {
@@ -223,6 +238,7 @@ trafficNavLinks.forEach(item => {
             trafficNavLinks[i].classList.remove('active');
             click.classList.add('active');
         };
+
 
         if (click.innerText === 'Hourly') {
             createTrafficLineChart(trafficHourlyLabel, trafficHourlyData, trafficHourlyOptions);
