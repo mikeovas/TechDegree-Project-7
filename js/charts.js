@@ -209,7 +209,7 @@ function createTrafficLineChart(labels, data, options) {
 // /----------Create Initail Traffic Charts---------/
 createTrafficLineChart(initialLabels, initialDataSets, initialOptions);
 
-/----------Create New Traffic Chart based on Choice---------/
+// /----------Create New Traffic Chart based on Choice---------/
 trafficNavLinks.forEach(item => {
     item.addEventListener('click', (e) => {
         let click = e.target;
