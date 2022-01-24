@@ -195,55 +195,59 @@ const initialOptions = weekly.options;
 
 // /-----------Functions to Create Traffic Charts---------/
 
+
+function createInitialTrafficLineChart(labels, data, options) {
+
+    let trafficLine = new Chart(trafficChart, {
+        type: 'line',
+        data: {
+            labels: trafficWeeklyLabel,
+            datasets: initialDataSets,
+        },
+        options: trafficWeeklyOptions,
+    });
+};
+
 function createTrafficLineChart(labels, data, options) {
 
     let trafficLine = new Chart(trafficChart, {
         type: 'line',
         data: {
-            labels: labels,
-            datasets: data,
+            labels: trafficWeeklyLabel,
+            datasets: initialDataSets,
         },
-        options: options
+        options: trafficWeeklyOptions,
     });
 };
 
 
-// /----------Create Initial Traffic Charts---------/
-let trafficLine = null;
-createTrafficLineChart(initialLabels, initialDataSets, initialOptions);
 
+
+
+
+
+// /----------Create Initial Traffic Charts---------/
+createInitialTrafficLineChart(initialLabels, initialDataSets, initialOptions);
 
 // /----------Create New Traffic Chart based on Choice---------/
 trafficNavLinks.forEach(item => {
     item.addEventListener('click', (e) => {
-        let click = e.target;
-        let trafficLine = document.querySelector('#traffic-chart');
+        const click = e.target;
 
         for (i = 0; i < trafficNavLinks.length; i++) {
             trafficNavLinks[i].classList.remove('active');
             click.classList.add('active');
         };
 
+
         if (click.innerText === 'Hourly') {
-            trafficLine.data.labels = trafficHourlyLabel;
-            trafficLine.data.datasets = trafficHourlyData;
-            trafficLine.data.options = trafficHourlyOptions;
-            trafficLine.update();
+            createTrafficLineChart(trafficHourlyLabel, trafficHourlyData, trafficHourlyOptions);
         } else if (click.innerText === 'Daily') {
-            trafficLine.data.labels = trafficDailyLabel;
-            trafficLine.data.datasets = trafficDailyData;
-            trafficLine.data.options = trafficDailyOptions;
-            trafficLine.update();
+            createTrafficLineChart(trafficDailyLabel, trafficDailyData, trafficDailyOptions);
         } else if (click.innerText === 'Weekly') {
-            trafficLine.data.labels = trafficWeeklyLabel;
-            trafficLine.data.datasets = trafficWeeklyData;
-            trafficLine.data.options = trafficWeeklyOptions;
-            trafficLine.update();
+            createTrafficLineChart(trafficWeeklyLabel, trafficWeeklyData, trafficWeeklyOptions);
         } else {
-            trafficLine.data.labels = trafficMonthlyLabel;
-            trafficLine.data.datasets = trafficMonthlyData;
-            trafficLine.data.options = trafficMonthlyOptions;
-            trafficLine.update();
+            createTrafficLineChart(trafficMonthlyLabel, trafficMonthlyData, trafficMonthlyOptions);
         }
 
     });
