@@ -49,7 +49,7 @@ const daily = {
     labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     datasets: [{
         data: [75, 125, 225, 250, 200, 150, 100],
-        backgroundColor: "rgb(205, 185, 220, 0.8)",
+        backgroundColor: "rgb(205, 185, 220, 0.6)",
         borderColor: "rgb(190, 180, 213)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
@@ -90,7 +90,7 @@ const weekly = {
     labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
     datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1800, 2250, 1500, 2500],
-        backgroundColor: "rgb(215, 185, 220, 0.8)",
+        backgroundColor: "rgb(215, 185, 220, 0.4)",
         borderColor: "rgb(190, 180, 213)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
@@ -131,7 +131,7 @@ const monthly = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     datasets: [{
         data: [7500, 12550, 15500, 20000, 25000, 28750, 29000, 30000, 32500, 31500, 31000, 31500],
-        backgroundColor: "rgb(225, 185, 220, 0.8)",
+        backgroundColor: "rgb(225, 185, 220, 0.2)",
         borderColor: "rgb(190, 180, 213)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
@@ -225,22 +225,22 @@ trafficNavLinks.forEach(item => {
         if (click.innerText === 'Hourly') {
             trafficLine.data.labels = trafficHourlyLabel;
             trafficLine.data.datasets = trafficHourlyData;
-            trafficLine.data.options = trafficHourlyOptions;
+            trafficLine.options = trafficHourlyOptions;
             trafficLine.update();
         } else if (click.innerText === 'Daily') {
             trafficLine.data.labels = trafficDailyLabel;
             trafficLine.data.datasets = trafficDailyData;
-            trafficLine.data.options = trafficDailyOptions;
+            trafficLine.options = trafficDailyOptions;
             trafficLine.update();
         } else if (click.innerText === 'Weekly') {
             trafficLine.data.labels = trafficWeeklyLabel;
             trafficLine.data.datasets = trafficWeeklyData;
-            trafficLine.data.options = trafficWeeklyOptions;
+            trafficLine.options = trafficWeeklyOptions;
             trafficLine.update();
         } else {
             trafficLine.data.labels = trafficMonthlyLabel;
             trafficLine.data.datasets = trafficMonthlyData;
-            trafficLine.data.options = trafficMonthlyOptions;
+            trafficLine.options = trafficMonthlyOptions;
             trafficLine.update();
         }
 
