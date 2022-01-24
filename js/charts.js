@@ -208,8 +208,8 @@ function createTrafficLineChart(labels, data, options) {
 
 // /----------Create Initial Traffic Charts---------/
 
-createTrafficLineChart(trafficMonthlyLabel, trafficMonthlyData, trafficMonthlyOptions);
-// createTrafficLineChart(initialLabels, initialDataSets, initialOptions);
+
+createTrafficLineChart(initialLabels, initialDataSets, initialOptions);
 
 // /----------Create New Traffic Chart based on Choice---------/
 trafficNavLinks.forEach(item => {
