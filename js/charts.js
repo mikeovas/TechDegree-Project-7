@@ -3,8 +3,6 @@ const trafficNavLinks = document.querySelectorAll(".traffic-nav-link");
 const trafficChart = document.querySelector("#traffic-chart").getContext('2d');
 
 
-
-
 // /----------------Chart Data----------------/
 const hourly = {
     labels: ['8am-9am', '9am-10am', '10am-11am', '11am-12pm', '12pm-1pm', '1pm-2pm', '2pm-3pm', '3pm-4pm', '4pm-5pm', '5pm-6pm'],
@@ -197,7 +195,7 @@ const initialOptions = weekly.options;
 
 function createTrafficLineChart(labels, data, options) {
 
-    let trafficLine = new Chart(trafficChart, {
+    trafficLine = new Chart(trafficChart, {
         type: 'line',
         data: {
             labels: labels,
@@ -209,7 +207,7 @@ function createTrafficLineChart(labels, data, options) {
 
 
 // /----------Create Initial Traffic Charts---------/
-let trafficLine = null;
+
 createTrafficLineChart(initialLabels, initialDataSets, initialOptions);
 
 
@@ -217,7 +215,7 @@ createTrafficLineChart(initialLabels, initialDataSets, initialOptions);
 trafficNavLinks.forEach(item => {
     item.addEventListener('click', (e) => {
         let click = e.target;
-        let trafficLine = document.querySelector('#traffic-chart');
+
 
         for (i = 0; i < trafficNavLinks.length; i++) {
             trafficNavLinks[i].classList.remove('active');
