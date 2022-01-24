@@ -130,7 +130,7 @@ const weekly = {
 const monthly = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     datasets: [{
-        data: [7500, 12550, 15500, 20000, 25000, 28750, 29000, 30000, 32500, 31500, 31000],
+        data: [7500, 12550, 15500, 20000, 25000, 28750, 29000, 30000, 32500, 31500, 31000, 31500],
         backgroundColor: "rgb(225, 185, 220, 0.8)",
         borderColor: "rgb(190, 180, 213)",
         color: "rgb(188, 174, 212)",
@@ -201,15 +201,15 @@ function createTrafficLineChart(labels, data, options) {
             labels: labels,
             datasets: data,
         },
-        options: options
+        options: options,
     });
 };
 
 
 // /----------Create Initial Traffic Charts---------/
 
-createTrafficLineChart(initialLabels, initialDataSets, initialOptions);
-
+createTrafficLineChart(trafficMonthlyLabel, trafficMonthlyData, trafficMonthlyOptions);
+// createTrafficLineChart(initialLabels, initialDataSets, initialOptions);
 
 // /----------Create New Traffic Chart based on Choice---------/
 trafficNavLinks.forEach(item => {
