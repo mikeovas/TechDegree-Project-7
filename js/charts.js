@@ -7,8 +7,8 @@ const trafficChart = document.querySelector("#traffic-chart").getContext('2d');
 const hourly = {
     labels: ['8am-9am', '9am-10am', '10am-11am', '11am-12pm', '12pm-1pm', '1pm-2pm', '2pm-3pm', '3pm-4pm', '4pm-5pm', '5pm-6pm'],
     datasets: [{
-        data: [5, 20, 45, 55, 85, 125, 100, 75, 78, 50],
-        backgroundColor: "rgb(174, 169, 235, 0.4)",
+        data: [5, 20, 45, 55, 85, 120, 100, 75, 78, 50],
+        backgroundColor: "rgb(174, 169, 235, 0.5)",
         borderColor: "rgb(15, 4, 145, 0.4)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
@@ -33,9 +33,16 @@ const hourly = {
                 min: 0,
                 max: 125,
                 ticks: {
-                    stepSize: 25
+                    stepSize: 25,
+                    color: "rgb(8, 2, 79)"
+                }
+            },
+            x: {
+                ticks: {
+                    color: "rgb(8, 2, 79)"
                 }
             }
+
         },
         plugins: {
             legend: {
@@ -72,9 +79,15 @@ const daily = {
         scales: {
             y: {
                 min: 0,
-                max: 250,
+                max: 300,
                 ticks: {
-                    stepSize: 75
+                    stepSize: 75,
+                    color: "rgb(8, 2, 79)"
+                }
+            },
+            x: {
+                ticks: {
+                    color: "rgb(8, 2, 79)"
                 }
             }
         },
@@ -89,8 +102,8 @@ const daily = {
 const weekly = {
     labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
     datasets: [{
-        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1800, 2250, 1500, 2500],
-        backgroundColor: "rgb(161, 155, 232, 0.6)",
+        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1800, 2250, 1500, 2450],
+        backgroundColor: "rgb(161, 155, 232, 0.5)",
         borderColor: "rgb(15, 4, 145, 0.5)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
@@ -115,7 +128,13 @@ const weekly = {
                 min: 0,
                 max: 2500,
                 ticks: {
-                    stepSize: 500
+                    stepSize: 500,
+                    color: "rgb(8, 2, 79)"
+                }
+            },
+            x: {
+                ticks: {
+                    color: "rgb(8, 2, 79)"
                 }
             }
         },
@@ -131,7 +150,7 @@ const monthly = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     datasets: [{
         data: [7500, 12550, 15500, 20000, 25000, 28750, 29000, 30000, 32500, 31500, 31000, 31500],
-        backgroundColor: "rgb(174, 169, 235, 0.6)",
+        backgroundColor: "rgb(174, 169, 235, 0.5)",
         borderColor: "rgb(15, 4, 145, 0.5)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
@@ -154,9 +173,15 @@ const monthly = {
         scales: {
             y: {
                 min: 0,
-                max: 32500,
+                max: 33000,
                 ticks: {
-                    stepSize: 7500
+                    stepSize: 7500,
+                    color: "rgb(8, 2, 79)"
+                }
+            },
+            x: {
+                ticks: {
+                    color: "rgb(8, 2, 79)"
                 }
             }
         },
