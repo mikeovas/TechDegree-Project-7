@@ -1,3 +1,5 @@
+// /==============Alert Banner======================/
+
 const alertBanner = document.getElementById("alert");
 //create HTML for the banner
 alertBanner.innerHTML = `<div class = "alert-banner">
@@ -12,13 +14,45 @@ alertBanner.addEventListener('click', e => {
     }
 });
 
-// const activeLi = document.getElementsByClassName('active');
+// ==============Bell Icon & Notifications ================/
 
-// document.querySelectorAll('.traffic-nav-link').forEach(item => {
-//     item.addEventListener('click', (e) => {
-//         for (i = 0; i < activeLi.length; i++) {
-//             activeLi[i].classList.remove('active');
-//         }
-//         e.target.classList.add('active');
-//     });
-// });
+//--------Set Timer for Notification Light to come on -----//
+setTimeout(() => {
+    const dot = document.querySelector(".notification-dot");
+    dot.style.opacity = 1;
+}, 2000)
+
+//---------Generate Random Notifications from a List -------//
+
+function randomNumber() {
+    //purpose is to produce a random number from 0 to 4
+    return Math.floor(Math.random() * 3) + 1;
+}
+
+const bellIcon = document.querySelector('.bell-icon');
+bellIcon.addEventListener('click', (e) => {
+    let click = e.target;
+
+    const remark = document.querySelectorAll('.remarks');
+    let number1 = randomNumber();
+    let number2 = randomNumber();
+    if (number1 === number2) {
+        number2 = randomNumber();
+    }
+
+    let text1 = remark.item(number1).innerText;
+    let text2 = remark.item(number2).innerText;
+
+    const modal = document.querySelector(".modal");
+    const newRemarks = document.querySelector('.modal-content');
+    const close = document.querySelector(".close")
+
+    newRemarks.innerHTML = `<p> ${text1}</p> 
+            <p>${text2}</p>`;
+
+    modal.style.display = "block";
+    newRemarks.style.display = "block";
+
+
+
+});
