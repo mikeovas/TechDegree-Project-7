@@ -45,14 +45,12 @@ bellIcon.addEventListener('click', (e) => {
 
     const modal = document.querySelector(".modal");
     const newRemarks = document.querySelector('.modal-content');
-    const close = document.querySelector(".close")
+    const close = document.querySelector(".close").innerHTML;
 
     newRemarks.innerHTML = `<p> ${text1}</p> 
-            <p>${text2}</p>`;
+            <p>${text2}</p>  
+            ${close}`;
 
     modal.style.display = "block";
     newRemarks.style.display = "block";
-
-
-
 });

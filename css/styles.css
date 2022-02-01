@@ -116,11 +116,12 @@
         border: 1px solid #888;
         width: 80%;
         color: navy;
+        font-weight: 700;
     }
     /* The Close Button */
     
     .close {
-        color: #aaa;
+        color: navy;
         float: right;
         font-size: 28px;
         font-weight: bold;
