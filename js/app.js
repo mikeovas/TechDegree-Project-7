@@ -39,11 +39,13 @@ function randomNumber() {
 // ----------Generate Random Notifications ------------//
 bellIcon.addEventListener('click', (e) => {
     let number1 = randomNumber();
+    let text1 = remark.item(number1).innerText;
+
     let number2 = randomNumber();
     if (number1 === number2) {
         number2 = randomNumber();
     }
-    let text1 = remark.item(number1).innerText;
+
     let text2 = remark.item(number2).innerText;
     newRemarks.innerHTML = `<p>${text1}</p> 
             <p>${text2}</p>
