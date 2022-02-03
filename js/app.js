@@ -25,7 +25,7 @@ setTimeout(() => {
 
 // ----------- Variables for Pop Up Notifications ---------/
 const bellIcon = document.querySelector('.bell-icon');
-const remark = document.querySelectorAll('.remarks');
+const remarks = document.querySelectorAll('.remarks');
 const modal = document.querySelector(".modal");
 const newRemarks = document.querySelector('.notification-content');
 const close = document.querySelector(".close");
@@ -38,15 +38,29 @@ function randomNumber() {
 
 // ----------Generate Random Notifications ------------//
 bellIcon.addEventListener('click', (e) => {
+    console.log(remarks);
+
     let number1 = randomNumber();
-    let text1 = remark.item(number1).innerText;
+    console.log(number1);
+
+    let text1 = remarks.item(number1).innerText;
+    console.log(text1);
+
+    remarks.removeChild(remarks.childNodes[number1]);
+
+    // for (let i = 0; i < remarks.length; i++) {
+    //     const elem = remarks[number1];
+    //     console.log(elem);
+    //     elem.parentNode.removeChild(elem);
+    // }
+    // console.log(elem);
+
 
     let number2 = randomNumber();
-    if (number1 === number2) {
-        number2 = randomNumber();
-    }
+    let text2 = remarks.item(number2).innerText;
 
-    let text2 = remark.item(number2).innerText;
+
+
     newRemarks.innerHTML = `<p>${text1}</p> 
             <p>${text2}</p>
             `;
