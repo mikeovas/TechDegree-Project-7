@@ -22,35 +22,36 @@ setTimeout(() => {
     dot.style.opacity = 1;
 }, 2000)
 
-//---------Generate Random Notifications from a List -------//
 
+// ----------- Variables for Pop Up Notifications ---------/
+const bellIcon = document.querySelector('.bell-icon');
+const remark = document.querySelectorAll('.remarks');
+const modal = document.querySelector(".modal");
+const newRemarks = document.querySelector('.notification-content');
+const close = document.querySelector(".close");
+
+//---------Generate Random Notifications from a List -------//
 function randomNumber() {
     //purpose is to produce a random number from 0 to 4
     return Math.floor(Math.random() * 3) + 1;
 }
 
-const bellIcon = document.querySelector('.bell-icon');
+// ----------Generate Random Notifications ------------//
 bellIcon.addEventListener('click', (e) => {
-    let click = e.target;
-
-    const remark = document.querySelectorAll('.remarks');
     let number1 = randomNumber();
     let number2 = randomNumber();
     if (number1 === number2) {
         number2 = randomNumber();
     }
-
     let text1 = remark.item(number1).innerText;
     let text2 = remark.item(number2).innerText;
-
-    const modal = document.querySelector(".modal");
-    const newRemarks = document.querySelector('.modal-content');
-    const close = document.querySelector(".close").innerHTML;
-
-    newRemarks.innerHTML = `<p> ${text1}</p> 
-            <p>${text2}</p>  
-            ${close}`;
-
+    newRemarks.innerHTML = `<p>${text1}</p> 
+            <p>${text2}</p>
+            `;
     modal.style.display = "block";
     newRemarks.style.display = "block";
 });
+
+close.addEventListener('click', (e) => {
+    modal.style.display = "none";
+})
