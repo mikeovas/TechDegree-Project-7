@@ -38,28 +38,16 @@ function randomNumber() {
 
 // ----------Generate Random Notifications ------------//
 bellIcon.addEventListener('click', (e) => {
-    console.log(remarks);
+    let number1;
+    let number2;
 
-    let number1 = randomNumber();
-    console.log(number1);
+    do {
+        number1 = randomNumber();
+        number2 = randomNumber();
+    } while (number1 === number2);
 
     let text1 = remarks.item(number1).innerText;
-    console.log(text1);
-
-    remarks.removeChild(remarks.childNodes[number1]);
-
-    // for (let i = 0; i < remarks.length; i++) {
-    //     const elem = remarks[number1];
-    //     console.log(elem);
-    //     elem.parentNode.removeChild(elem);
-    // }
-    // console.log(elem);
-
-
-    let number2 = randomNumber();
     let text2 = remarks.item(number2).innerText;
-
-
 
     newRemarks.innerHTML = `<p>${text1}</p> 
             <p>${text2}</p>
