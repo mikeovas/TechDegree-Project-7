@@ -68,6 +68,12 @@
         fill: whitesmoke;
     }
     
+    .bell-icon:hover {
+        fill: rgb(120, 245, 70);
+        transform: scale(1.4);
+        transition: transform 1s ease-in;
+    }
+    
     .line-break {
         border-right: 3px solid rgb(145, 142, 142);
         height: 3.5rem;
@@ -94,17 +100,12 @@
     
     .modal {
         display: none;
-        /* Hidden by default */
         position: fixed;
-        /* Stay in place */
         z-index: 1;
-        /* Sit on top */
         left: 0;
         top: 0;
         width: 100%;
-        /* Full width */
         height: 100%;
-        /* Full height */
         background-color: rgba(198, 194, 238, 0.4);
     }
     /* Modal Content/Box */

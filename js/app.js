@@ -22,7 +22,6 @@ setTimeout(() => {
     dot.style.opacity = 1;
 }, 2000)
 
-
 // ----------- Variables for Pop Up Notifications ---------/
 const bellIcon = document.querySelector('.bell-icon');
 const remarks = document.querySelectorAll('.remarks');

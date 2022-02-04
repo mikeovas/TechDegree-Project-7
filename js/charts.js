@@ -1,9 +1,10 @@
+// /---------------Variables for Traffice Line Graph ----------/
+
 const trafficNav = document.querySelectorAll(".traffic-nav");
 const trafficNavLinks = document.querySelectorAll(".traffic-nav-link");
 const trafficChart = document.querySelector("#traffic-chart").getContext('2d');
 
-
-// /----------------Chart Data----------------/
+// /----------------Traffic Line Graph Data----------------/
 const hourly = {
     labels: ['8am-9am', '9am-10am', '10am-11am', '11am-12pm', '12pm-1pm', '1pm-2pm', '2pm-3pm', '3pm-4pm', '4pm-5pm', '5pm-6pm'],
     datasets: [{
@@ -198,28 +199,21 @@ const monthly = {
 const trafficHourlyLabel = hourly.labels;
 const trafficHourlyData = hourly.datasets;
 const trafficHourlyOptions = hourly.options;
-
 const trafficDailyLabel = daily.labels;
 const trafficDailyData = daily.datasets;
 const trafficDailyOptions = daily.options;
-
 const trafficWeeklyLabel = weekly.labels
 const trafficWeeklyData = weekly.datasets;
 const trafficWeeklyOptions = weekly.options;
-
 const trafficMonthlyLabel = monthly.labels;
 const trafficMonthlyData = monthly.datasets;
 const trafficMonthlyOptions = monthly.options;
-
 const initialLabels = weekly.labels;
 const initialDataSets = weekly.datasets;
 const initialOptions = weekly.options;
 
-
 // /-----------Functions to Create Traffic Charts---------/
-
 function createTrafficLineChart(labels, data, options) {
-
     trafficLine = new Chart(trafficChart, {
         type: 'line',
         data: {
@@ -230,17 +224,13 @@ function createTrafficLineChart(labels, data, options) {
     });
 };
 
-
 // /----------Create Initial Traffic Charts---------/
-
-
 createTrafficLineChart(initialLabels, initialDataSets, initialOptions);
 
 // /----------Create New Traffic Chart based on Choice---------/
 trafficNavLinks.forEach(item => {
     item.addEventListener('click', (e) => {
         let click = e.target;
-
 
         for (i = 0; i < trafficNavLinks.length; i++) {
             trafficNavLinks[i].classList.remove('active');
