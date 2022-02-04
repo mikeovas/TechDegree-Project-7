@@ -58,4 +58,4 @@ bellIcon.addEventListener('click', (e) => {
 
 close.addEventListener('click', (e) => {
     modal.style.display = "none";
-})
+});
