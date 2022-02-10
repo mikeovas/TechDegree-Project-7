@@ -3,14 +3,16 @@
 const trafficNav = document.querySelectorAll(".traffic-nav");
 const trafficNavLinks = document.querySelectorAll(".traffic-nav-link");
 const trafficChart = document.querySelector("#traffic-chart").getContext('2d');
+const dailyBar = document.querySelector("#daily-chart").getContext('2d');
+const mobileDoughnut = document.querySelector("#mobile-chart").getContext('2d');
 
 // /----------------Traffic Line Graph Data----------------/
 const hourly = {
     labels: ['8am-9am', '9am-10am', '10am-11am', '11am-12pm', '12pm-1pm', '1pm-2pm', '2pm-3pm', '3pm-4pm', '4pm-5pm', '5pm-6pm'],
     datasets: [{
         data: [5, 20, 45, 55, 85, 120, 100, 75, 78, 50],
-        backgroundColor: "rgb(174, 169, 235, 0.5)",
-        borderColor: "rgb(15, 4, 145, 0.4)",
+        backgroundColor: "rgba(213,214,236, 0.5)",
+        borderColor: "rgba(15, 4, 145, 0.4)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
         lineTension: 0.25,
@@ -57,8 +59,8 @@ const daily = {
     labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     datasets: [{
         data: [75, 125, 185, 250, 200, 150, 100],
-        backgroundColor: "rgb(174, 169, 235, 0.5)",
-        borderColor: "rgb(15, 4, 145, 0.5)",
+        backgroundColor: "rgba(213,214,236, 0.5)",
+        borderColor: "rgba(15, 4, 145, 0.5)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
         lineTension: 0.25,
@@ -104,8 +106,8 @@ const weekly = {
     labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
     datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1800, 2250, 1500, 2450],
-        backgroundColor: "rgb(161, 155, 232, 0.5)",
-        borderColor: "rgb(15, 4, 145, 0.5)",
+        backgroundColor: "rgba(213,214,236, 0.5)",
+        borderColor: "rgba(15, 4, 145, 0.5)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
         lineTension: 0.25,
@@ -151,8 +153,8 @@ const monthly = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     datasets: [{
         data: [7500, 12550, 15500, 20000, 25000, 28750, 29000, 30000, 32500, 31500, 31000, 31500],
-        backgroundColor: "rgb(174, 169, 235, 0.5)",
-        borderColor: "rgb(15, 4, 145, 0.5)",
+        backgroundColor: "rgba(213,214,236, 0.5)",
+        borderColor: "rgba(15, 4, 145, 0.5)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
         lineTension: 0.25,
@@ -260,4 +262,114 @@ trafficNavLinks.forEach(item => {
         }
 
     });
+});
+
+// /============Daily Traffic Bar Chart==============/
+bar = new Chart(dailyBar, {
+    type: 'bar',
+    data: {
+        labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+        datasets: [{
+            data: [75, 125, 175, 130, 220, 200, 100],
+            backgroundColor: [
+                'rgb(116,119,191)',
+            ],
+            borderColor: [
+                'rgba(153, 102, 255, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+
+    options: {
+        maintainAspectRatio: false,
+        responsive: true,
+        animation: {
+            duration: 0
+        },
+        layout: {
+            padding: {
+                left: 50,
+                right: 50,
+                top: 30,
+                bottom: 30
+            },
+        },
+        scales: {
+            y: {
+                min: 0,
+                max: 250,
+                ticks: {
+                    stepSize: 50,
+                    color: "rgb(8, 2, 79)"
+                }
+            },
+            x: {
+                ticks: {
+                    color: "rgb(8, 2, 79)"
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        }
+    }
+});
+
+// /============Daily Mobile Doughnut Chart==============/
+doughnut = new Chart(mobileDoughnut, {
+    type: 'doughnut',
+    data: {
+        labels: ['Desktop', 'Tablet', 'Phones'],
+        datasets: [{
+            data: [60, 15, 15],
+            backgroundColor: [
+                'rgb(116,119,191)',
+                'rgb(129,201,143)',
+                'rgb(81,182,200)'
+            ],
+            borderColor: [
+                'rgba(153, 102, 255, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+
+    options: {
+        maintainAspectRatio: false,
+        responsive: true,
+        animation: {
+            duration: 0
+        },
+        layout: {
+            padding: {
+                left: 50,
+                right: 50,
+                top: 30,
+                bottom: 30
+            },
+        },
+        scales: {
+            xAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }
+            }],
+            yAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }
+            }],
+        },
+
+        plugins: {
+            legend: {
+                display: true,
+                position: 'right',
+            },
+
+        }
+    }
 });

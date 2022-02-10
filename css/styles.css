@@ -36,7 +36,7 @@
     .header {
         grid-area: header;
         color: whitesmoke;
-        background-color: rgb(143, 116, 218);
+        background-color: rgb(116, 119, 191);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -141,7 +141,7 @@
     /* ================Main Nav Bar ================ */
     
     .navigation {
-        background-color: rgb(75, 74, 150);
+        background-color: rgb(77, 76, 114);
         grid-area: navigation;
         height: 4rem;
         display: flex;
@@ -183,8 +183,8 @@
     }
     
     .alert-banner {
-        background-color: rgb(114, 127, 197);
-        border: 2px solid rgb(114, 127, 197);
+        background-color: rgb(116, 119, 191);
+        border: 2px solid rgb(116, 119, 191);
         color: whitesmoke;
         height: 50px;
         margin: 2% 4%;
@@ -220,7 +220,7 @@
     }
     
     .active {
-        background-color: rgb(108, 218, 122);
+        background-color: rgb(129, 201, 143);
         border-radius: 25px;
         padding: 1.2% 5%;
         color: whitesmoke;
@@ -229,6 +229,12 @@
     .widget-container-full,
     .widget-container-half {
         width: 95vw;
+    }
+    
+    #daily-chart,
+    #mobile-chart {
+        width: 45vw;
+        height: 45vh;
     }
     /*========== Social Media ==========*/
     
@@ -243,7 +249,7 @@
     .social-images {
         display: flex;
         flex-direction: row;
-        background-color: rgb(143, 116, 218);
+        background-color: rgb(116, 119, 191);
         height: 100px;
         width: 100px;
         border-radius: 50%;
@@ -265,7 +271,7 @@
     }
     
     .brand {
-        color: rgb(143, 116, 218);
+        color: rgb(116, 119, 191);
         font-size: 1.5rem;
         margin-bottom: 0%;
     }
