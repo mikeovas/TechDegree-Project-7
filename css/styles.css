@@ -247,7 +247,7 @@
     }
     
     .social-images {
-        display: flex;
+        display: inline-flex;
         flex-direction: row;
         background-color: rgb(116, 119, 191);
         height: 100px;
