@@ -59,6 +59,31 @@ close.addEventListener('click', (e) => {
     modal.style.display = "none";
 });
 
+// /===================Create Autocomnplete for User Input Field ==================/
+const userNames = ["Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // /==================Send Message Form & Confirm Message Sent==========/
 const button = document.getElementById("send");
 button.addEventListener("click", (e) => {
