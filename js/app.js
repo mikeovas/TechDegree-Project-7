@@ -62,7 +62,16 @@ close.addEventListener('click', (e) => {
 // /==================Send Message Form & Confirm Message Sent==========/
 const button = document.getElementById("send");
 button.addEventListener("click", (e) => {
-    console.log(e);
     e.preventDefault();
-    alert("Your message has been submitted to the user!");
+    let user = document.getElementById("userField").value;
+    let message = document.getElementById("messageField").value;
+    if (user === "") {
+        console.log("user" + user);
+        alert("Please input a user name.");
+    } else if (message === "") {
+        console.log("message" + message);
+        alert("Please input a message to the user");
+    } else {
+        alert("Your message has been submitted to the user!");
+    }
 });
