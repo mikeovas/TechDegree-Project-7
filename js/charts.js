@@ -12,7 +12,7 @@ const hourly = {
     datasets: [{
         data: [5, 20, 45, 55, 85, 120, 100, 75, 78, 50],
         backgroundColor: "rgba(213,214,236, 0.5)",
-        borderColor: "rgba(15, 4, 145, 0.4)",
+        borderColor: "rgba(15, 4, 145, 0.5)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
         lineTension: 0.25,
@@ -51,7 +51,7 @@ const hourly = {
             legend: {
                 display: false
             }
-        }
+        },
     }
 };
 

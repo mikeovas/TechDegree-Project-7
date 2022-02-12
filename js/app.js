@@ -58,3 +58,11 @@ bellIcon.addEventListener('click', (e) => {
 close.addEventListener('click', (e) => {
     modal.style.display = "none";
 });
+
+// /==================Send Message Form & Confirm Message Sent==========/
+const button = document.getElementById("send");
+button.addEventListener("click", (e) => {
+    console.log(e);
+    e.preventDefault();
+    alert("Form Submitted!");
+});
