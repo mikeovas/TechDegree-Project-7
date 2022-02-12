@@ -64,5 +64,5 @@ const button = document.getElementById("send");
 button.addEventListener("click", (e) => {
     console.log(e);
     e.preventDefault();
-    alert("Form Submitted!");
+    alert("Your message has been submitted to the user!");
 });
