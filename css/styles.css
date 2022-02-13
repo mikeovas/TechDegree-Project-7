@@ -353,7 +353,7 @@
         border-radius: 5px;
         font-size: 0.55rem;
         min-height: 40px;
-        background-color: rgb(236, 235, 235);
+        background-color: rgb(245, 245, 245);
     }
     
     .form-area {
@@ -367,18 +367,18 @@
     }
     
     .send {
-        background-color: rgb(170, 152, 221);
+        background-color: rgb(116, 119, 191);
         width: 100%;
     }
     
     .save {
-        background-color: rgb(170, 152, 221);
+        background-color: rgb(116, 119, 191);
         width: 50%;
         margin-right: 2.5%;
     }
     
     .disabled {
-        background: rgb(192, 191, 191);
+        background: rgb(153, 153, 153);
         width: 50%;
         margin-left: 2.5%;
     }
@@ -386,7 +386,7 @@
     [placeholder] {
         padding-left: 5px;
     }
-    /* /===================Create Autocomnplete for User Input Field ==================/ */
+    /* /===================Create Autocomplete for User Input Field ==================/ */
     
     .autocomplete {
         /*the container must be positioned relative:*/
