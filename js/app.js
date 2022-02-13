@@ -60,12 +60,6 @@ close.addEventListener('click', (e) => {
 });
 
 // /===================Create Autocomnplete for User Input Field ==================/
-const userNames = ["Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"];
-const searchInput = document.getElementById("userField");
-
-
-
-
 
 
 
