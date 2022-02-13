@@ -351,19 +351,6 @@ doughnut = new Chart(mobileDoughnut, {
                 bottom: 30
             },
         },
-        scales: {
-            xAxes: [{
-                gridLines: {
-                    color: "rgba(0, 0, 0, 0)",
-                }
-            }],
-            yAxes: [{
-                gridLines: {
-                    color: "rgba(0, 0, 0, 0)",
-                }
-            }],
-        },
-
         plugins: {
             legend: {
                 display: true,
