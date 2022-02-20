@@ -68,15 +68,42 @@ document.getElementById('userField').addEventListener('input', (e) => {
     if (e.target.value) {
         suggestArray = suggestions.filter(sugg =>
             sugg.toLocaleLowerCase().startsWith(e.target.value));
-        suggestArray = suggestArray.map(sugg => `<li>${sugg}</li>`)
+        suggestArray = suggestArray.map(sugg => `<li class="suggestion">${sugg}</li>`)
         suggestArray = suggestArray.join(" ");
     }
-    console.log(suggestArray);
 
     let autocom = document.querySelector('.autocom-box');
     autocom.innerHTML = suggestArray;
     console.log(autocom);
+
+    autocom.addEventListener('click', (val) => {
+        console.log(val.target);
+    })
+
 });
+
+
+// const suggest = document.querySelectorAll(".suggestion li").values;
+// console.log(suggest);
+// const suggestList = suggest.parentElement;
+// console.log(suggestList);
+// suggestList.addEventListener("click", (e) => {
+//     console.log("you clicked on" + e.target);
+// })
+
+// suggest.forEach((e) => {
+//         e.addEventListener('click', (e) => {
+//             target = e.target;
+//             console.log(target);
+//         });
+
+//     }
+
+
+
+
+
+
 
 
 
