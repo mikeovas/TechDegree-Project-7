@@ -76,8 +76,8 @@ document.getElementById('userField').addEventListener('input', (e) => {
     autocom.innerHTML = suggestArray;
     console.log(autocom);
 
-    autocom.addEventListener('click', (val) => {
-        console.log(val.target);
+    autocom.addEventListener('click', (e) => {
+        console.log(e.target);
     })
 
 });
@@ -125,16 +125,19 @@ document.getElementById('userField').addEventListener('input', (e) => {
 
 
 // /==================Send Message Form & Confirm Message Sent==========/
+const user = document.getElementById("userField");
+const message = document.getElementById("messageField");
 const button = document.getElementById("send");
 button.addEventListener("click", (e) => {
     e.preventDefault();
-    let user = document.getElementById("userField").value;
-    let message = document.getElementById("messageField").value;
-    if (user === "") {
-        alert("Please input a user name.");
-    } else if (message === "") {
-        alert("Please input a message to the user");
+
+    if (user.value === "" && message.value === "") {
+        alert("Please fill out user and message fields before sending.");
+    } else if (user.value === "") {
+        alert("Please input a user name in the user field before sending.");
+    } else if (message.value === "") {
+        alert("Please input a message to the user in the message field before sending.");
     } else {
-        alert("Your message has been submitted to the user!");
+        alert(`Your message has been successfully submitted to ${user.value}!`);
     }
 });
