@@ -387,63 +387,6 @@
         padding-left: 5px;
     }
     /* /===================Create Autocomplete for User Input Field ==================/ */
-    
-    .message {
-        max-width: 100%;
-    }
-    /* .message-widget {
-        position: relative;
-        background: #fff;
-        width: 100%;
-        border-radius: 5px;
-        box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
-    } */
-    /* .form-field {
-        height: 55px;
-        width: 100%;
-        outline: none;
-        border: none;
-        border-radius: 5px;
-        padding: 0 60px 0 20px;
-        font-size: 18px;
-    } */
-    /* .icon {
-        height: 55px;
-        width: 55px;
-        line-height: 55px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        text-align: center;
-        font-size: 20px;
-        color: rgb(116, 119, 191);
-    }
-     */
-    
-    .form-field {
-        position: relative;
-    }
-    
-    .autocom-box {
-        padding: 10px 8px;
-        /* overflow-y: auto; */
-        pointer-events: none;
-        position: absolute;
-        background-color: rgb(245, 245, 245);
-    }
-    
-    .autocom-box li {
-        list-style: none;
-        padding: 0px 12px;
-        width: 100%;
-        cursor: default;
-        border-radius: 5px;
-        right: 50;
-    }
-    
-    .autocom-box li:hover {
-        background: #efefef;
-    }
     /*========== Media Queries ==========*/
     
     @media (min-width: 768px) {

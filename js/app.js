@@ -60,6 +60,25 @@ close.addEventListener('click', (e) => {
 });
 
 // /===================Create Autocomnplete for User Input Field ==================/
+const suggestions = ['Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver'];
+
+document.getElementById('userField').addEventListener('input', (e) => {
+    let suggestArray = [];
+
+    if (e.target.value) {
+        suggestArray = suggestions.filter(sugg =>
+            sugg.toLocaleLowerCase().startsWith(e.target.value));
+        suggestArray = suggestArray.map(sugg => `<li>${sugg}</li>`)
+        suggestArray = suggestArray.join(" ");
+    }
+    console.log(suggestArray);
+
+    let autocom = document.querySelector('.autocom-box');
+    autocom.innerHTML = suggestArray;
+    console.log(autocom);
+});
+
+
 
 
 
