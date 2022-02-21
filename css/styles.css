@@ -444,7 +444,33 @@
     .autocom-box li:hover {
         background: #efefef;
     }
-    /*========== Media Queries ==========*/
+    /*===============Toggle Switches===============*/
+    
+    .switch-light {
+        margin-bottom: 20px;
+    }
+    
+    .toggleSwitch {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .toggle {
+        flex: 1 0 30%;
+    }
+    
+    .toggle-text {
+        flex: 1 0 30%;
+    }
+    /*-------------Back to top link ------------*/
+    
+    .back-to-top {
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    /*=============== Media Queries ===============*/
     
     @media (min-width: 768px) {
         .grid-container {
