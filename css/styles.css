@@ -451,17 +451,16 @@
     }
     
     .toggleSwitch {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: inline-block;
     }
+    /* .toggleSwitch,
+    .flexbox {
+        display: inline-flex;
+        flex-direction: column;
+    }*/
     
-    .toggle {
-        flex: 1 0 30%;
-    }
-    
-    .toggle-text {
-        flex: 1 0 30%;
+    flex-item {
+        max-width: 30%;
     }
     /*-------------Back to top link ------------*/
     
