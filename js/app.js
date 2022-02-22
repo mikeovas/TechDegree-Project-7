@@ -82,48 +82,6 @@ document.getElementById('userField').addEventListener('input', (e) => {
 
 });
 
-
-// const suggest = document.querySelectorAll(".suggestion li").values;
-// console.log(suggest);
-// const suggestList = suggest.parentElement;
-// console.log(suggestList);
-// suggestList.addEventListener("click", (e) => {
-//     console.log("you clicked on" + e.target);
-// })
-
-// suggest.forEach((e) => {
-//         e.addEventListener('click', (e) => {
-//             target = e.target;
-//             console.log(target);
-//         });
-
-//     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // /==================Send Message Form & Confirm Message Sent==========/
 const user = document.getElementById("userField");
 const message = document.getElementById("messageField");

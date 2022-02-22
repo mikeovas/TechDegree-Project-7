@@ -604,7 +604,7 @@
  * http://css-tricks.com/webkit-sibling-bug/
  */
 
-@media only screen and (-webkit-max-device-pixel-ratio: 2) and (max-device-width: 80em) {
+@media only screen and (-webkit-max-device-pixel-ratio: 2) and (max-width: 80em) {
     .switch-light,
     .switch-toggle {
         -webkit-animation: webkitSiblingBugfix infinite 1s;
