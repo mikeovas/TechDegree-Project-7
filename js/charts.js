@@ -270,7 +270,7 @@ bar = new Chart(dailyBar, {
     data: {
         labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
         datasets: [{
-            data: [75, 125, 175, 130, 220, 200, 100],
+            data: [75, 115, 175, 125, 225, 200, 100],
             backgroundColor: [
                 'rgb(116,119,191)',
             ],
@@ -324,7 +324,7 @@ doughnut = new Chart(mobileDoughnut, {
     data: {
         labels: ['Desktop', 'Tablet', 'Phones'],
         datasets: [{
-            data: [60, 15, 15],
+            data: [2000, 550, 500],
             backgroundColor: [
                 'rgb(116,119,191)',
                 'rgb(129,201,143)',

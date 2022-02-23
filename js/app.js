@@ -85,8 +85,8 @@ document.getElementById('userField').addEventListener('input', (e) => {
 // /==================Send Message Form & Confirm Message Sent==========/
 const user = document.getElementById("userField");
 const message = document.getElementById("messageField");
-const button = document.getElementById("send");
-button.addEventListener("click", (e) => {
+const send = document.getElementById("send");
+send.addEventListener("click", (e) => {
     e.preventDefault();
 
     if (user.value === "" && message.value === "") {

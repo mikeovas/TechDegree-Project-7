@@ -447,6 +447,26 @@
     .switch-light {
         margin-bottom: 20px;
     }
+    
+    .settings {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    
+    .switch-light.switch-ios {
+        display: flex;
+        align-items: center;
+        margin-top: 2%;
+    }
+    
+    .switch-light.switch-ios span {
+        flex-basis: 20%;
+    }
+    
+    .switch-light.switch-ios strong {
+        flex-basis: 80%;
+    }
     /*-------------Back to top link ------------*/
     
     .back-to-top {
@@ -455,6 +475,7 @@
         padding-bottom: 15px;
     }
     /*=============== Media Queries ===============*/
+    /*--------------Media Query min-width: 768px--------*/
     
     @media (min-width: 768px) {
         .grid-container {
@@ -585,6 +606,7 @@
             color: rgb(54, 54, 218);
         }
     }
+    /*--------------Media Query min-width: 1024px--------*/
     
     @media (min-width: 1024px) {
         .header-name {
@@ -648,4 +670,14 @@
         .disabled {
             margin: 2% 4%;
         }
+    }
+    /*------------------Settings Widget--------------*/
+    
+    .switch-light.switch-ios span {
+        flex-basis: 20%;
+    }
+    
+    .switch-light.switch-ios strong {
+        margin-left: 5%;
+        flex-basis: 40%;
     }
