@@ -99,3 +99,45 @@ send.addEventListener("click", (e) => {
         alert(`Your message has been successfully submitted to ${user.value}!`);
     }
 });
+
+// Local Storage
+
+const email = document.querySelector('#receiveEmail');
+const public = document.querySelector('#setPublic');
+const timezone = document.querySelector('#timezone')
+const save = document.querySelector('#save');
+const cancel = document.querySelector('#cancel');
+
+recallStorage();
+
+save.addEventListener('click', () => {
+    localStorage.setItem("email", email.checked);
+    localStorage.setItem("public", public.checked);
+    localStorage.setItem("timezone", timezone.value);
+});
+
+cancel.addEventListener("click", () => {
+    localStorage.removeItem("email");
+    localStorage.removeItem("public");
+    localStorage.removeItem("timezone");
+    email.checked = null;
+    public.checked = null;
+    timezone.value = "";
+});
+
+
+function recallStorage() {
+    if (localStorage.email === "true") {
+        email.checked = true;
+    } else {
+        email.checked = false;
+    }
+    if (localStorage.public === "true") {
+        public.checked = true;
+    } else {
+        public.checked = false;
+    }
+    if (localStorage.timezone) {
+        timezone.value = localStorage.timezone;
+    }
+};

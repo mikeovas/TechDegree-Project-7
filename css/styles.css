@@ -454,19 +454,35 @@
         flex-direction: column;
     }
     
-    .switch-light.switch-ios {
+    .switch-ios.switch-light {
         display: flex;
         align-items: center;
-        margin-top: 2%;
+        margin: 12px;
     }
     
-    .switch-light.switch-ios span {
-        flex-basis: 20%;
+    .switch-ios.switch-light span {
+        flex-basis: 30%;
     }
     
-    .switch-light.switch-ios strong {
+    .switch-ios.switch-light strong {
         flex-basis: 80%;
     }
+    
+    .switch-ios.switch-light span span {
+        margin-left: -18%;
+    }
+    
+    .switch-ios.switch-light>span:hover {
+        background-color: rgb(179, 160, 233);
+    }
+    
+    .switch-ios.switch-light>span {
+        border: 0.25rem solid #c0c0c0;
+        padding: 16px;
+    }
+    /* .switch-ios.switch-light:checked>span {
+        border: 0.25rem solid #c0c0c0;
+    } */
     /*-------------Back to top link ------------*/
     
     .back-to-top {
@@ -606,6 +622,7 @@
             color: rgb(54, 54, 218);
         }
     }
+    /*-----------------Settings Widget---------------------*/
     /*--------------Media Query min-width: 1024px--------*/
     
     @media (min-width: 1024px) {
@@ -671,7 +688,7 @@
             margin: 2% 4%;
         }
     }
-    /*------------------Settings Widget--------------*/
+    /* ------------------Settings Widget--------------
     
     .switch-light.switch-ios span {
         flex-basis: 20%;
@@ -680,4 +697,4 @@
     .switch-light.switch-ios strong {
         margin-left: 5%;
         flex-basis: 40%;
-    }
+    } */
