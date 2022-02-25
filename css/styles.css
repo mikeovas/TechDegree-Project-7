@@ -477,12 +477,10 @@
     }
     
     .switch-ios.switch-light>span {
+        background-color: rgb(116, 119, 191);
         border: 0.25rem solid #c0c0c0;
         padding: 16px;
     }
-    /* .switch-ios.switch-light:checked>span {
-        border: 0.25rem solid #c0c0c0;
-    } */
     /*-------------Back to top link ------------*/
     
     .back-to-top {
