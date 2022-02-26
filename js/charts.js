@@ -12,7 +12,7 @@ const hourly = {
     datasets: [{
         data: [5, 20, 45, 55, 85, 120, 100, 75, 78, 50],
         backgroundColor: "rgba(213,214,236, 0.5)",
-        borderColor: "rgba(15, 4, 145, 0.5)",
+        borderColor: "rgba(15, 4, 145, 0.2)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
         lineTension: 0.25,
@@ -60,7 +60,7 @@ const daily = {
     datasets: [{
         data: [75, 125, 185, 250, 200, 150, 100],
         backgroundColor: "rgba(213,214,236, 0.5)",
-        borderColor: "rgba(15, 4, 145, 0.5)",
+        borderColor: "rgba(15, 4, 145, 0.2)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
         lineTension: 0.25,
@@ -107,7 +107,7 @@ const weekly = {
     datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1800, 2250, 1500, 2450],
         backgroundColor: "rgba(213,214,236, 0.5)",
-        borderColor: "rgba(15, 4, 145, 0.5)",
+        borderColor: "rgba(15, 4, 145, 0.2)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
         lineTension: 0.25,
@@ -154,7 +154,7 @@ const monthly = {
     datasets: [{
         data: [7500, 12550, 15500, 20000, 25000, 28750, 29000, 30000, 32500, 31500, 31000, 31500],
         backgroundColor: "rgba(213,214,236, 0.5)",
-        borderColor: "rgba(15, 4, 145, 0.5)",
+        borderColor: "rgba(15, 4, 145, 0.2)",
         color: "rgb(188, 174, 212)",
         borderWidth: 2,
         lineTension: 0.25,

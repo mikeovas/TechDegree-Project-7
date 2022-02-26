@@ -43,28 +43,32 @@
         height: 5rem;
         width: 100%;
         box-sizing: border-box;
-        padding: 0 5%;
+        padding: 3%;
     }
     
     .header-group {
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        flex-basis: 50%;
     }
     
     .header-title {
-        font-size: 1.2rem;
+        font-size: 2rem;
+        font-weight: 500;
     }
     
     .header-name {
         margin-left: 5%;
-        font-size: 0.7rem;
+        font-size: 1rem;
         min-width: 72px;
+        font-weight: 400;
     }
     
     .bell-icon {
         display: flex;
-        height: 1.8rem;
+        height: 2.1rem;
+        flex-basis: 15%;
         fill: whitesmoke;
     }
     
@@ -77,14 +81,13 @@
     .line-break {
         border-right: 3px solid rgb(145, 142, 142);
         height: 3.5rem;
-        margin-left: 2%;
-        margin-right: 2%;
+        flex-basis: 5%;
+        margin-right: 4%;
     }
     
     .profile-pic {
-        border-radius: 50%;
-        height: 3rem;
-        margin-left: 4%;
+        border-radius: 100%;
+        height: 3.2rem;
     }
     
     .notification-dot {
@@ -121,7 +124,7 @@
         border-radius: 10px;
         position: relative;
     }
-    /* The Close Button */
+    /* ----The Close Button----- */
     
     .close {
         color: navy;
@@ -143,7 +146,7 @@
     .navigation {
         background-color: rgb(77, 76, 114);
         grid-area: navigation;
-        height: 4rem;
+        height: 5rem;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -154,9 +157,8 @@
     .icon-chart,
     .icon-members,
     .icon-settings {
-        height: 1.75rem;
+        height: 2.5rem;
         fill: whitesmoke;
-        padding: 4%;
     }
     /*========== Main ==========*/
     
@@ -185,15 +187,17 @@
     .alert-banner {
         background-color: rgb(116, 119, 191);
         color: whitesmoke;
-        height: 50px;
+        height: 3.5rem;
         margin: 2% 4%;
-        border-radius: 5px;
+        border-radius: 10px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
     }
     
     .alert-banner p {
-        padding: 0 4%;
+        padding: 0 5%;
     }
     
     .tab {
@@ -212,16 +216,18 @@
     .traffic-nav {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
         padding-right: 10%;
         list-style-type: none;
-        font-size: 1rem;
+        font-size: 1.2rem;
+        margin-left: -5%;
     }
     
     .active {
         background-color: rgb(129, 201, 143);
         border-radius: 25px;
-        padding: 1.2% 5%;
+        padding: 2% 4%;
         color: whitesmoke;
     }
     
@@ -239,10 +245,12 @@
     
     .brand-container {
         display: flex;
-        border: 2px solid rgb(145, 142, 142);
+        border: 2px solid rgb(216, 211, 211);
         background: rgb(236, 235, 235);
-        border-radius: 15px;
+        border-radius: 10px;
         margin: 5% 5%;
+        height: 9rem;
+        align-items: center;
     }
     
     .social-images {
@@ -277,6 +285,7 @@
     
     .number {
         font-size: 3rem;
+        font-weight: 300;
         margin: 1% auto 20%;
     }
     /*========== New Members & Recent Activity ==========*/
@@ -295,7 +304,7 @@
     
     .member,
     .recent {
-        border-bottom: 2px solid rgb(145, 142, 142);
+        border-bottom: 2px solid rgb(216, 211, 211);
         text-align: center;
         margin-top: 1em;
         height: 20%;
@@ -350,9 +359,10 @@
     .button {
         margin-bottom: 4%;
         border-radius: 5px;
-        font-size: 0.55rem;
+        font-size: 0.75rem;
         min-height: 40px;
-        background-color: rgb(245, 245, 245);
+        background: rgb(236, 235, 235);
+        border: 2px solid rgb(216, 211, 211);
     }
     
     .form-area {
@@ -363,6 +373,17 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+    }
+    
+    .send,
+    .save,
+    .disabled {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        color: whitesmoke;
+        height: 60px;
+        font-size: 1.1rem;
+        font-weight: 400;
     }
     
     .send {
@@ -383,7 +404,9 @@
     }
     
     [placeholder] {
-        padding-left: 5px;
+        padding: 3%;
+        font-size: .8rem;
+        ;
     }
     /* /===================Create Autocomplete for User Input Field ==================/ */
     
@@ -443,10 +466,6 @@
         background: #efefef;
     }
     /*===============Toggle Switches===============*/
-    
-    .switch-light {
-        margin-bottom: 20px;
-    }
     
     .settings {
         display: flex;
@@ -511,13 +530,8 @@
             grid-template-areas: "header header" "navigation main";
         }
         /*---------- Header ---------- */
-        .profile-pic {
-            margin: 4%;
-        }
-        .header-name {
-            margin-left: 5%;
-            font-size: .8em;
-            min-width: 85px;
+        .header {
+            padding: 0 1%;
         }
         /*---------- Main Nav Bar ----------*/
         .navigation {
@@ -530,13 +544,22 @@
         .icon-chart,
         .icon-members,
         .icon-settings {
-            padding: 4%;
+            padding: 10%;
             margin-top: 30px;
         }
         /*---------- Dashboard ----------*/
         .two-rows {
             display: grid;
             grid-template-columns: 1fr 1fr;
+        }
+        .traffic-nav {
+            margin-top: -.5%;
+        }
+        .active {
+            padding: 4% 6%;
+        }
+        .alert-banner p {
+            padding: 0 2%;
         }
         /*---------- Charts ----------*/
         .traffic-header {
@@ -583,6 +606,7 @@
         .brand-container {
             margin: 5% 2%;
             padding: 2%;
+            height: 7rem;
         }
         .brand {
             font-size: 1rem;
@@ -648,19 +672,23 @@
     /*--------------Media Query min-width: 1024px--------*/
     
     @media (min-width: 1024px) {
-        .header-name {
+        /* .header-name {
             margin-left: 5%;
             font-size: .8em;
             min-width: 85px;
-        }
+        } */
         /*---------- Charts ----------*/
-        .traffic-header {
+        /* .traffic-header {
             flex-direction: row;
             justify-content: flex-start;
-        }
-        .traffic-header .headline {
-            flex-basis: 60%;
-        }
+        } */
+        /* .traffic-header .headline {
+            flex-basis: 80%;
+        } */
+        /* ---------- Dashboard ----------
+        .traffic-nav {
+            padding-right: -2%;
+        } */
         /*------------Members & Recent Activity -------------*/
         .members-recent {
             display: flex;
