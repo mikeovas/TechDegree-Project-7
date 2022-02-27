@@ -737,6 +737,9 @@
         .disabled {
             margin: 2% 4%;
         }
+        .message {
+            border-bottom: none;
+        }
         /*--------------Toggle Switch--------------------*/
         .switch-ios.switch-light span {
             flex-basis: 25%;
