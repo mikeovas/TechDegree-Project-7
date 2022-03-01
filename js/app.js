@@ -62,24 +62,32 @@ close.addEventListener('click', (e) => {
 // /===================Create Autocomnplete for User Input Field ==================/
 const suggestions = ['Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver'];
 
-document.getElementById('userField').addEventListener('input', (e) => {
+let userField = document.getElementById('userField');
+userField.addEventListener('keyup', (e) => {
     let suggestArray = [];
 
     if (e.target.value) {
-        suggestArray = suggestions.filter(sugg =>
-            sugg.toLocaleLowerCase().startsWith(e.target.value));
+        suggestArray = suggestions.filter(sugg => {
+            let searchTerm = e.target.value.toLowerCase().trim();
+            console.log(searchTerm);
+            if (searchTerm) {
+                return sugg.toLowerCase().startsWith(searchTerm);
+            }
+        });
         suggestArray = suggestArray.map(sugg => `<li class="suggestion">${sugg}</li>`)
         suggestArray = suggestArray.join(" ");
     }
 
     let autocom = document.querySelector('.autocom-box');
     autocom.innerHTML = suggestArray;
-    console.log(autocom);
 
-    autocom.addEventListener('click', (e) => {
-        console.log(e.target);
-    })
-
+    let suggestionElements = autocom.querySelectorAll('li');
+    suggestionElements.forEach((li) => {
+        li.addEventListener('click', (e) => {
+            userField.value = e.target.innerText;
+            autocom.innerHTML = "";
+        });
+    });
 });
 
 // /==================Send Message Form & Confirm Message Sent==========/

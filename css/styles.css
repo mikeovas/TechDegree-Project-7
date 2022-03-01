@@ -98,7 +98,7 @@
         width: 8px;
         border-radius: 50%;
     }
-    /* ============= Modal for Pop Up Notic=fications ====== */
+    /* ============= Modal for Pop Up Notifications ====== */
     /* The Modal (background) */
     
     .modal {
@@ -358,7 +358,7 @@
     .form-area,
     .button {
         margin-bottom: 4%;
-        border-radius: 5px;
+        border-radius: 10px;
         font-size: 0.75rem;
         min-height: 40px;
         background: rgb(236, 235, 235);
@@ -413,50 +413,18 @@
     .message {
         max-width: 100%;
     }
-    /* .message-widget {
-        position: relative;
-        background: #fff;
-        width: 100%;
-        border-radius: 5px;
-        box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
-    } */
-    /* .form-field {
-        height: 55px;
-        width: 100%;
-        outline: none;
-        border: none;
-        border-radius: 5px;
-        padding: 0 60px 0 20px;
-        font-size: 18px;
-    } */
-    /* .icon {
-        height: 55px;
-        width: 55px;
-        line-height: 55px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        text-align: center;
-        font-size: 20px;
-        color: rgb(116, 119, 191);
-    }
-     */
     
     .form-field {
         position: relative;
     }
     
     .autocom-box {
-        padding: 10px 8px;
-        /* overflow-y: auto; */
-        pointer-events: none;
-        position: absolute;
         background-color: rgb(245, 245, 245);
     }
     
     .autocom-box li {
         list-style: none;
-        padding: 0px 12px;
+        padding: 10px 12px;
         width: 100%;
         cursor: default;
         border-radius: 5px;
@@ -532,6 +500,9 @@
         /*---------- Header ---------- */
         .header {
             padding: 0 1%;
+        }
+        .bell-icon {
+            flex-basis: 10%;
         }
         /*---------- Main Nav Bar ----------*/
         .navigation {
@@ -672,23 +643,9 @@
     /*--------------Media Query min-width: 1024px--------*/
     
     @media (min-width: 1024px) {
-        /* .header-name {
-            margin-left: 5%;
-            font-size: .8em;
-            min-width: 85px;
-        } */
-        /*---------- Charts ----------*/
-        /* .traffic-header {
-            flex-direction: row;
-            justify-content: flex-start;
-        } */
-        /* .traffic-header .headline {
-            flex-basis: 80%;
-        } */
-        /* ---------- Dashboard ----------
-        .traffic-nav {
-            padding-right: -2%;
-        } */
+        .bell-icon {
+            flex-basis: 5%;
+        }
         /*------------Members & Recent Activity -------------*/
         .members-recent {
             display: flex;
@@ -739,6 +696,10 @@
         }
         .message {
             border-bottom: none;
+        }
+        .form-area {
+            resize: vertical;
+            height: 110px;
         }
         /*--------------Toggle Switch--------------------*/
         .switch-ios.switch-light span {
