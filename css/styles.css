@@ -523,14 +523,8 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
         }
-        .traffic-nav {
-            margin-top: -.5%;
-        }
         .active {
             padding: 4% 6%;
-        }
-        .alert-banner p {
-            padding: 0 2%;
         }
         /*---------- Charts ----------*/
         .traffic-header {
@@ -540,6 +534,11 @@
         }
         .traffic-header .headline {
             flex-basis: 50%;
+            align-self: center;
+        }
+        .traffic-nav {
+            justify-content: space-between;
+            align-content: center;
         }
         .traffic-nav li {
             margin: 5%;
@@ -646,6 +645,7 @@
         .bell-icon {
             flex-basis: 5%;
         }
+        /* -----------Charts --------------------------*/
         /*------------Members & Recent Activity -------------*/
         .members-recent {
             display: flex;
@@ -702,13 +702,13 @@
             height: 110px;
         }
         /*--------------Toggle Switch--------------------*/
+        .switch-ios.switch-light {
+            margin-left: 5%;
+        }
         .switch-ios.switch-light span {
             flex-basis: 25%;
         }
         .switch-ios.switch-light strong {
-            flex-basis: 45%;
-        }
-        .switch-ios.switch-light>span {
-            height: 2.8em;
+            flex-basis: 42%;
         }
     }
