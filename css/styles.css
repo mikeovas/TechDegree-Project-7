@@ -533,11 +533,11 @@
             justify-content: flex-start;
         }
         .traffic-header .headline {
-            flex-basis: 50%;
+            flex-basis: 47%;
             align-self: center;
         }
         .traffic-nav {
-            justify-content: space-between;
+            justify-content: space-around;
             align-content: center;
         }
         .traffic-nav li {
@@ -646,6 +646,9 @@
             flex-basis: 5%;
         }
         /* -----------Charts --------------------------*/
+        .traffic-header .headline {
+            flex-basis: 63%;
+        }
         /*------------Members & Recent Activity -------------*/
         .members-recent {
             display: flex;
