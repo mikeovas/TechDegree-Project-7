@@ -69,7 +69,6 @@ userField.addEventListener('keyup', (e) => {
     if (e.target.value) {
         suggestArray = suggestions.filter(sugg => {
             let searchTerm = e.target.value.toLowerCase().trim();
-            console.log(searchTerm);
             if (searchTerm) {
                 return sugg.toLowerCase().startsWith(searchTerm);
             }
