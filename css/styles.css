@@ -406,7 +406,30 @@
     [placeholder] {
         padding: 3%;
         font-size: .8rem;
-        ;
+    }
+    /*-- removes and replaces default down arrow with custom colored arrow --*/
+    
+    .form-field {
+        /*removes default down arrow*/
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        /* Add some styling */
+        padding-left: 3%;
+        width: 100%;
+    }
+    
+    .down-arrow {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .down-arrow svg {
+        fill: rgb(116, 119, 191);
+        position: absolute;
+        top: 13px;
+        left: 94%;
+        max-height: 17px;
+        max-width: 17px;
     }
     /*===================Autocomplete for User Input Field ==================*/
     
@@ -639,6 +662,9 @@
         .switch-ios.switch-light span span {
             margin-left: -14%;
         }
+        .down-arrow svg {
+            left: 95%;
+        }
     }
     /*--------------Media Query min-width: 1024px--------*/
     
@@ -708,6 +734,12 @@
         .form-area {
             resize: vertical;
             height: 140px;
+        }
+        #timezone.form-field {
+            width: 92%;
+        }
+        .down-arrow svg {
+            left: 91%;
         }
         /*--------------Toggle Switch--------------------*/
         .switch-ios.switch-light {
