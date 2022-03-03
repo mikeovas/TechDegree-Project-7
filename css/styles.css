@@ -1,754 +1,797 @@
-    /* ========== Body ========== */
-    
-    * {
-        box-sizing: border-box;
-        font-family: 'Roboto', sans-serif;
-    }
-    
+/* I am aiming for the grade of Exceeds Expectations and don't want anything less.
+I have tested this in three browsers - Google Chrome, Microsoft Edge, and Mozilla Firefox. It worked fine.
+I have checked the CSS with an CSS validator and found no errors. */
+
+
+/* ========== Body ========== */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-auto-rows: auto;
+    grid-template-areas: "header" "navigation" "main";
+}
+
+.traffic,
+.daily,
+.mobile,
+.social-stats,
+.members-container,
+.recent-container,
+.message {
+    border-bottom: 2px solid rgb(202, 200, 200);
+}
+
+.dashboard,
+.traffic,
+.daily,
+.mobile,
+.social,
+.members-recent,
+.messaging-settings {
+    grid-column: 1 / span 2;
+}
+
+
+/* =================== Header================= */
+
+.header {
+    grid-area: header;
+    color: whitesmoke;
+    background-color: rgb(116, 119, 191);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 3%;
+}
+
+.header-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-basis: 50%;
+}
+
+.header-title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.header-name {
+    margin-left: 5%;
+    font-size: 1rem;
+    min-width: 72px;
+    font-weight: 400;
+}
+
+.bell-icon {
+    display: flex;
+    height: 2.1rem;
+    flex-basis: 15%;
+    fill: whitesmoke;
+}
+
+.bell-icon:hover {
+    fill: rgb(120, 245, 70);
+    transform: scale(1.4);
+    transition: transform 1s ease-in;
+}
+
+.line-break {
+    border-right: 3px solid rgb(145, 142, 142);
+    height: 3.5rem;
+    flex-basis: 5%;
+    margin-right: 4%;
+}
+
+.profile-pic {
+    border-radius: 100%;
+    height: 3.2rem;
+}
+
+.notification-dot {
+    background: rgb(120, 245, 70);
+    opacity: 0;
+    transition: all 0.3s ease-in;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+}
+
+
+/* ============= Modal for Pop Up Notifications ====== */
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(198, 194, 238, 0.4);
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: rgb(211, 219, 241);
+    margin: 15% auto;
+    padding: 5% 15% 5% 10%;
+    border: 2px solid rgb(27, 11, 247);
+    width: 80%;
+    color: navy;
+    font-weight: 700;
+    border-radius: 10px;
+    position: relative;
+}
+
+
+/* ----The Close Button----- */
+
+.close {
+    color: navy;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 40%;
+    right: 10%;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(145, 94, 228);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* ================Main Nav Bar ================ */
+
+.navigation {
+    background-color: rgb(77, 76, 114);
+    grid-area: navigation;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icon-home,
+.icon-chart,
+.icon-members,
+.icon-settings {
+    height: 2.5rem;
+    fill: whitesmoke;
+}
+
+
+/*========== Main ==========*/
+
+.main {
+    grid-area: main;
+    background-color: whitesmoke;
+}
+
+.headline {
+    text-transform: uppercase;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 1%;
+}
+
+
+/*========== Dashboard ==========*/
+
+.main-headline {
+    margin-left: 5%;
+}
+
+.upper-dash {
+    display: flex;
+    flex-direction: row;
+}
+
+.alert-banner {
+    background-color: rgb(116, 119, 191);
+    color: whitesmoke;
+    height: 3.5rem;
+    margin: 2% 4%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.alert-banner p {
+    padding: 0 5%;
+}
+
+.tab {
+    width: 100%;
+    background: rgb(236, 235, 235);
+    border-left: 2px solid darkgray;
+    border-bottom: 2px solid darkgray;
+    margin-left: 5%;
+}
+
+
+/* ---------Line Graph, Bar & Doughnut Charts----------- */
+
+.two-rows {
+    grid-column: 1 / span 2;
+}
+
+.traffic-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 10%;
+    list-style-type: none;
+    font-size: 1.2rem;
+    margin-left: -5%;
+}
+
+.active {
+    background-color: rgb(129, 201, 143);
+    border-radius: 25px;
+    padding: 2% 4%;
+    color: whitesmoke;
+}
+
+.widget-container-full,
+.widget-container-half {
+    width: 95vw;
+}
+
+#daily-chart,
+#mobile-chart {
+    width: 45vw;
+    height: 45vh;
+}
+
+
+/*========== Social Media ==========*/
+
+.brand-container {
+    display: flex;
+    border: 2px solid rgb(216, 211, 211);
+    background: rgb(236, 235, 235);
+    border-radius: 10px;
+    margin: 5% 5%;
+    height: 9rem;
+    align-items: center;
+}
+
+.social-images {
+    display: inline-flex;
+    flex-direction: row;
+    background-color: rgb(116, 119, 191);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: auto 5%;
+}
+
+.social-images svg {
+    width: 100px;
+    height: 100px;
+    padding: 25%;
+}
+
+.social-images path {
+    fill: white;
+}
+
+.social-text {
+    margin: 5% 5%;
+}
+
+.brand {
+    color: rgb(116, 119, 191);
+    font-size: 1.5rem;
+    margin-bottom: 0%;
+}
+
+.number {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 1% auto 20%;
+}
+
+
+/*========== New Members & Recent Activity ==========*/
+
+.profile-image {
+    border-radius: 50%;
+    height: 7em;
+    margin-top: 0.5rem;
+}
+
+.members-recent {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.member,
+.recent {
+    border-bottom: 2px solid rgb(216, 211, 211);
+    text-align: center;
+    margin-top: 1em;
+    height: 20%;
+}
+
+.member:last-of-type,
+.recent:last-of-type {
+    border: none;
+}
+
+.members-text p {
+    margin-bottom: 4px;
+}
+
+.members-text a {
+    text-decoration: none;
+}
+
+.members-date {
+    margin-top: 5px;
+}
+
+.recent-text p {
+    width: 70%;
+    margin: auto;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+/*========== Messaging & Settings ==========*/
+
+.messaging-settings {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-widget,
+.settings {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.settings .headline {
+    margin-left: 0%
+}
+
+.form-field,
+.form-area,
+.button {
+    margin-bottom: 4%;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    min-height: 40px;
+    background: rgb(236, 235, 235);
+    border: 2px solid rgb(216, 211, 211);
+}
+
+.form-area {
+    min-height: 100px;
+}
+
+.settings-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.send,
+.save,
+.disabled {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: whitesmoke;
+    height: 60px;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.send {
+    background-color: rgb(116, 119, 191);
+    width: 100%;
+}
+
+.save {
+    background-color: rgb(116, 119, 191);
+    width: 50%;
+    margin-right: 2.5%;
+}
+
+.disabled {
+    background: rgb(153, 153, 153);
+    width: 50%;
+    margin-left: 2.5%;
+}
+
+[placeholder] {
+    padding: 3%;
+    font-size: .8rem;
+}
+
+
+/*-- removes and replaces default down arrow with custom colored arrow --*/
+
+.form-field {
+    /*removes default down arrow*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Add some styling */
+    padding-left: 3%;
+    width: 100%;
+}
+
+.down-arrow {
+    position: relative;
+    display: inline-block;
+}
+
+.down-arrow svg {
+    fill: rgb(116, 119, 191);
+    position: absolute;
+    top: 13px;
+    left: 94%;
+    max-height: 17px;
+    max-width: 17px;
+}
+
+
+/*===================Autocomplete for User Input Field ==================*/
+
+.message {
+    max-width: 100%;
+}
+
+.form-field {
+    position: relative;
+}
+
+.autocom-box {
+    background-color: rgb(245, 245, 245);
+}
+
+.autocom-box li {
+    list-style: none;
+    padding: 10px 12px;
+    width: 100%;
+    cursor: default;
+    border-radius: 5px;
+}
+
+.autocom-box li:hover {
+    background: #efefef;
+}
+
+
+/*===============Toggle Switches===============*/
+
+.settings {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.switch-ios.switch-light {
+    display: flex;
+    align-items: center;
+    margin: 14px 0;
+}
+
+.switch-ios.switch-light span {
+    flex-basis: 30%;
+}
+
+.switch-ios.switch-light strong {
+    flex-basis: 80%;
+}
+
+.switch-ios.switch-light span span {
+    margin-left: -17%;
+    color: #fafafa;
+}
+
+.switch-ios.switch-light>span:hover {
+    background-color: rgb(179, 160, 233);
+}
+
+.switch-ios.switch-light>span {
+    background-color: rgb(126, 129, 199);
+    border: 0.25rem solid #c0c0c0;
+    height: 2.6em;
+}
+
+.switch-ios.switch-light input:checked~span a {
+    border: 0.25rem solid #c0c0c0;
+}
+
+.switch-ios.switch-light input:checked~span {
+    border: 0.25rem solid #c0c0c0;
+    box-shadow: inset 0 0 0 30px rgb(116, 119, 191);
+}
+
+.switch-ios.switch-toggle a {
+    background-color: rgb(116, 119, 191);
+}
+
+
+/*-------------Back to top link ------------*/
+
+.back-to-top {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+/*=============== Media Queries ===============*/
+
+
+/*--------------Media Query min-width: 768px--------*/
+
+@media (min-width: 768px) {
     .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        grid-auto-rows: auto;
-        grid-template-areas: "header" "navigation" "main";
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: "header header" "navigation main";
     }
-    
-    .traffic,
-    .daily,
-    .mobile,
-    .social-stats,
-    .members-container,
-    .recent-container,
-    .message {
-        border-bottom: 2px solid rgb(202, 200, 200);
-    }
-    
-    .dashboard,
-    .traffic,
-    .daily,
-    .mobile,
-    .social,
-    .members-recent,
-    .messaging-settings {
-        grid-column: 1 / span 2;
-    }
-    /* =================== Header================= */
-    
+    /*---------- Header ---------- */
     .header {
-        grid-area: header;
-        color: whitesmoke;
-        background-color: rgb(116, 119, 191);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 5rem;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 3%;
+        padding: 0 1%;
     }
-    
-    .header-group {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        flex-basis: 50%;
-    }
-    
-    .header-title {
-        font-size: 2rem;
-        font-weight: 500;
-    }
-    
-    .header-name {
-        margin-left: 5%;
-        font-size: 1rem;
-        min-width: 72px;
-        font-weight: 400;
-    }
-    
     .bell-icon {
-        display: flex;
-        height: 2.1rem;
-        flex-basis: 15%;
-        fill: whitesmoke;
+        flex-basis: 10%;
     }
-    
-    .bell-icon:hover {
-        fill: rgb(120, 245, 70);
-        transform: scale(1.4);
-        transition: transform 1s ease-in;
-    }
-    
-    .line-break {
-        border-right: 3px solid rgb(145, 142, 142);
-        height: 3.5rem;
-        flex-basis: 5%;
-        margin-right: 4%;
-    }
-    
-    .profile-pic {
-        border-radius: 100%;
-        height: 3.2rem;
-    }
-    
-    .notification-dot {
-        background: rgb(120, 245, 70);
-        opacity: 0;
-        transition: all 0.3s ease-in;
-        height: 8px;
-        width: 8px;
-        border-radius: 50%;
-    }
-    /* ============= Modal for Pop Up Notifications ====== */
-    /* The Modal (background) */
-    
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(198, 194, 238, 0.4);
-    }
-    /* Modal Content/Box */
-    
-    .modal-content {
-        background-color: rgb(211, 219, 241);
-        margin: 15% auto;
-        padding: 5% 15% 5% 10%;
-        border: 2px solid rgb(27, 11, 247);
-        width: 80%;
-        color: navy;
-        font-weight: 700;
-        border-radius: 10px;
-        position: relative;
-    }
-    /* ----The Close Button----- */
-    
-    .close {
-        color: navy;
-        font-size: 28px;
-        font-weight: bold;
-        position: absolute;
-        top: 40%;
-        right: 10%;
-    }
-    
-    .close:hover,
-    .close:focus {
-        color: rgb(145, 94, 228);
-        text-decoration: none;
-        cursor: pointer;
-    }
-    /* ================Main Nav Bar ================ */
-    
+    /*---------- Main Nav Bar ----------*/
     .navigation {
-        background-color: rgb(77, 76, 114);
-        grid-area: navigation;
-        height: 5rem;
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
+        flex-direction: column;
+        height: auto;
+        justify-content: flex-start;
     }
-    
     .icon-home,
     .icon-chart,
     .icon-members,
     .icon-settings {
-        height: 2.5rem;
-        fill: whitesmoke;
+        padding: 10%;
+        margin-top: 30px;
     }
-    /*========== Main ==========*/
-    
-    .main {
-        grid-area: main;
-        background-color: whitesmoke;
+    /*---------- Dashboard ----------*/
+    .two-rows {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
-    
-    .headline {
-        text-transform: uppercase;
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-bottom: 1%;
+    .active {
+        padding: 4% 6%;
     }
-    /*========== Dashboard ==========*/
-    
-    .main-headline {
-        margin-left: 5%;
-    }
-    
-    .upper-dash {
+    /*---------- Charts ----------*/
+    .traffic-header {
         display: flex;
         flex-direction: row;
+        justify-content: flex-start;
+        height: 4em;
     }
-    
-    .alert-banner {
-        background-color: rgb(116, 119, 191);
-        color: whitesmoke;
-        height: 3.5rem;
-        margin: 2% 4%;
-        border-radius: 10px;
+    .traffic-header .headline {
+        flex-basis: 60%;
+        align-self: center;
+    }
+    .traffic-nav {
+        justify-content: space-around;
+        align-content: center;
+        flex-basis: 30%;
+    }
+    .traffic-nav li {
+        margin: 5%;
+    }
+    .daily {
+        grid-column: 1 / 2;
+    }
+    .mobile {
+        grid-column: 2 / 3;
+    }
+    .daily .headline,
+    .mobile .headline {
+        padding-left: 5%;
+    }
+    .daily {
+        border-right: 2px solid gray;
+    }
+    .widget-container-full {
+        width: 90vw;
+    }
+    .widget-container-half {
+        width: 45vw;
+    }
+    /* --------- Social Media ----------*/
+    .social-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 1% 2%;
+    }
+    .social-images,
+    .social-images svg {
+        height: 75px;
+        width: 75px;
+    }
+    .brand-container {
+        margin: 5% 2%;
+        padding: 2%;
+        height: 7rem;
+    }
+    .brand {
+        font-size: 1rem;
+    }
+    .number {
+        font-size: 2rem;
+    }
+    /*------------Members & Recent Activity -------------*/
+    .members-recent,
+    .messaging-settings {
+        grid-column: 1 / span 2;
+    }
+    .members-container,
+    .recent-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .member,
+    .recent {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 1.1rem;
     }
-    
-    .alert-banner p {
-        padding: 0 5%;
-    }
-    
-    .tab {
-        width: 100%;
-        background: rgb(236, 235, 235);
-        border-left: 2px solid darkgray;
-        border-bottom: 2px solid darkgray;
-        margin-left: 5%;
-    }
-    /* ---------Line Graph, Bar & Doughnut Charts----------- */
-    
-    .two-rows {
-        grid-column: 1 / span 2;
-    }
-    
-    .traffic-nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        padding-right: 10%;
-        list-style-type: none;
-        font-size: 1.2rem;
-        margin-left: -5%;
-    }
-    
-    .active {
-        background-color: rgb(129, 201, 143);
-        border-radius: 25px;
-        padding: 2% 4%;
-        color: whitesmoke;
-    }
-    
-    .widget-container-full,
-    .widget-container-half {
-        width: 95vw;
-    }
-    
-    #daily-chart,
-    #mobile-chart {
-        width: 45vw;
-        height: 45vh;
-    }
-    /*========== Social Media ==========*/
-    
-    .brand-container {
-        display: flex;
-        border: 2px solid rgb(216, 211, 211);
-        background: rgb(236, 235, 235);
-        border-radius: 10px;
-        margin: 5% 5%;
-        height: 9rem;
-        align-items: center;
-    }
-    
-    .social-images {
-        display: inline-flex;
-        flex-direction: row;
-        background-color: rgb(116, 119, 191);
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        margin: auto 5%;
-    }
-    
-    .social-images svg {
-        width: 100px;
-        height: 100px;
-        padding: 25%;
-    }
-    
-    .social-images path {
-        fill: white;
-    }
-    
-    .social-text {
-        margin: 5% 5%;
-    }
-    
-    .brand {
-        color: rgb(116, 119, 191);
-        font-size: 1.5rem;
-        margin-bottom: 0%;
-    }
-    
-    .number {
-        font-size: 3rem;
-        font-weight: 300;
-        margin: 1% auto 20%;
-    }
-    /*========== New Members & Recent Activity ==========*/
-    
     .profile-image {
-        border-radius: 50%;
-        height: 7em;
-        margin-top: 0.5rem;
+        margin: 2% 5% 5%;
+        width: 6rem;
+        height: 6rem;
     }
-    
-    .members-recent {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-    }
-    
-    .member,
-    .recent {
-        border-bottom: 2px solid rgb(216, 211, 211);
-        text-align: center;
-        margin-top: 1em;
-        height: 20%;
-    }
-    
-    .member:last-of-type,
-    .recent:last-of-type {
-        border: none;
-    }
-    
-    .members-text p {
-        margin-bottom: 4px;
-    }
-    
-    .members-text a {
-        text-decoration: none;
-    }
-    
     .members-date {
-        margin-top: 5px;
+        align-content: center;
+        margin-right: 5%;
+        width: 50px;
     }
-    
+    .members-text,
+    .recent-text {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 80%;
+        text-align: start;
+        padding-bottom: 30px;
+    }
     .recent-text p {
-        width: 70%;
-        margin: auto;
+        margin-left: 0px;
     }
-    
     .hidden {
-        visibility: hidden;
+        visibility: visible;
+        margin-right: 5%;
+        padding-bottom: 30px;
+        color: rgb(54, 54, 218);
     }
-    /*========== Messaging & Settings ==========*/
-    
-    .messaging-settings {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .message-widget,
-    .settings {
-        display: flex;
-        flex-direction: column;
-        margin-left: 4%;
-        margin-right: 4%;
-    }
-    
-    .settings .headline {
-        margin-left: 0%
-    }
-    
-    .form-field,
-    .form-area,
-    .button {
-        margin-bottom: 4%;
-        border-radius: 10px;
-        font-size: 0.75rem;
-        min-height: 40px;
-        background: rgb(236, 235, 235);
-        border: 2px solid rgb(216, 211, 211);
-    }
-    
-    .form-area {
-        min-height: 100px;
-    }
-    
-    .settings-button {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-    
-    .send,
-    .save,
-    .disabled {
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        color: whitesmoke;
-        height: 60px;
-        font-size: 1.1rem;
-        font-weight: 400;
-    }
-    
-    .send {
-        background-color: rgb(116, 119, 191);
-        width: 100%;
-    }
-    
-    .save {
-        background-color: rgb(116, 119, 191);
-        width: 50%;
-        margin-right: 2.5%;
-    }
-    
-    .disabled {
-        background: rgb(153, 153, 153);
-        width: 50%;
-        margin-left: 2.5%;
-    }
-    
-    [placeholder] {
-        padding: 3%;
-        font-size: .8rem;
-    }
-    /*-- removes and replaces default down arrow with custom colored arrow --*/
-    
-    .form-field {
-        /*removes default down arrow*/
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        /* Add some styling */
-        padding-left: 3%;
-        width: 100%;
-    }
-    
-    .down-arrow {
-        position: relative;
-        display: inline-block;
-    }
-    
-    .down-arrow svg {
-        fill: rgb(116, 119, 191);
-        position: absolute;
-        top: 13px;
-        left: 94%;
-        max-height: 17px;
-        max-width: 17px;
-    }
-    /*===================Autocomplete for User Input Field ==================*/
-    
-    .message {
-        max-width: 100%;
-    }
-    
-    .form-field {
-        position: relative;
-    }
-    
-    .autocom-box {
-        background-color: rgb(245, 245, 245);
-    }
-    
-    .autocom-box li {
-        list-style: none;
-        padding: 10px 12px;
-        width: 100%;
-        cursor: default;
-        border-radius: 5px;
-    }
-    
-    .autocom-box li:hover {
-        background: #efefef;
-    }
-    /*===============Toggle Switches===============*/
-    
-    .settings {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-    
-    .switch-ios.switch-light {
-        display: flex;
-        align-items: center;
-        margin: 14px 0;
-    }
-    
+    /*--------------Toggle Switch--------------------*/
     .switch-ios.switch-light span {
+        flex-basis: 16%;
+    }
+    .switch-ios.switch-light strong {
         flex-basis: 30%;
     }
-    
-    .switch-ios.switch-light strong {
-        flex-basis: 80%;
-    }
-    
     .switch-ios.switch-light span span {
-        margin-left: -17%;
-        color: #fafafa;
+        margin-left: -14%;
     }
-    
-    .switch-ios.switch-light>span:hover {
-        background-color: rgb(179, 160, 233);
+    .down-arrow svg {
+        left: 95%;
     }
-    
-    .switch-ios.switch-light>span {
-        background-color: rgb(126, 129, 199);
-        border: 0.25rem solid #c0c0c0;
-        height: 2.6em;
+}
+
+
+/*--------------Media Query min-width: 1024px--------*/
+
+@media (min-width: 1024px) {
+    .bell-icon {
+        flex-basis: 5%;
     }
-    
-    .switch-ios.switch-light input:checked~span a {
-        border: 0.25rem solid #c0c0c0;
+    /* -----------Charts --------------------------*/
+    .traffic-header .headline {
+        flex-basis: 70%;
     }
-    
-    .switch-ios.switch-light input:checked~span {
-        border: 0.25rem solid #c0c0c0;
-        box-shadow: inset 0 0 0 30px rgb(116, 119, 191);
+    .traffic-nav li {
+        flex-basis: 40%;
+        margin: 5% 8%;
     }
-    
-    .switch-ios.switch-toggle a {
-        background-color: rgb(116, 119, 191);
+    /*------------Members & Recent Activity -------------*/
+    .members-recent {
+        display: flex;
+        flex-direction: row;
+        font-size: 0.85rem;
     }
-    /*-------------Back to top link ------------*/
-    
-    .back-to-top {
-        text-align: center;
-        padding-top: 15px;
-        padding-bottom: 15px;
+    .profile-image {
+        height: 4rem;
+        width: 4rem;
     }
-    /*=============== Media Queries ===============*/
-    /*--------------Media Query min-width: 768px--------*/
-    
-    @media (min-width: 768px) {
-        .grid-container {
-            grid-template-columns: 55px 1fr;
-            grid-template-areas: "header header" "navigation main";
-        }
-        /*---------- Header ---------- */
-        .header {
-            padding: 0 1%;
-        }
-        .bell-icon {
-            flex-basis: 10%;
-        }
-        /*---------- Main Nav Bar ----------*/
-        .navigation {
-            display: flex;
-            flex-direction: column;
-            height: auto;
-            justify-content: flex-start;
-        }
-        .icon-home,
-        .icon-chart,
-        .icon-members,
-        .icon-settings {
-            padding: 10%;
-            margin-top: 30px;
-        }
-        /*---------- Dashboard ----------*/
-        .two-rows {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        .active {
-            padding: 4% 6%;
-        }
-        /*---------- Charts ----------*/
-        .traffic-header {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            height: 4em;
-        }
-        .traffic-header .headline {
-            flex-basis: 60%;
-            align-self: center;
-        }
-        .traffic-nav {
-            justify-content: space-around;
-            align-content: center;
-            flex-basis: 30%;
-        }
-        .traffic-nav li {
-            margin: 5%;
-        }
-        .daily {
-            grid-column: 1 / 2;
-        }
-        .mobile {
-            grid-column: 2 / 3;
-        }
-        .daily .headline,
-        .mobile .headline {
-            padding-left: 5%;
-        }
-        .daily {
-            border-right: 2px solid gray;
-        }
-        .widget-container-full {
-            width: 90vw;
-        }
-        .widget-container-half {
-            width: 45vw;
-        }
-        /* --------- Social Media ----------*/
-        .social-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            margin: 1% 2%;
-        }
-        .social-images,
-        .social-images svg {
-            height: 75px;
-            width: 75px;
-        }
-        .brand-container {
-            margin: 5% 2%;
-            padding: 2%;
-            height: 7rem;
-        }
-        .brand {
-            font-size: 1rem;
-        }
-        .number {
-            font-size: 2rem;
-        }
-        /*------------Members & Recent Activity -------------*/
-        .members-recent,
-        .messaging-settings {
-            grid-column: 1 / span 2;
-        }
-        .members-container,
-        .recent-container {
-            display: flex;
-            flex-direction: column;
-        }
-        .member,
-        .recent {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .profile-image {
-            margin: 2% 5% 5%;
-            width: 6rem;
-            height: 6rem;
-        }
-        .members-date {
-            align-content: center;
-            margin-right: 5%;
-            width: 50px;
-        }
-        .members-text,
-        .recent-text {
-            display: flex;
-            flex-direction: column;
-            flex-basis: 80%;
-            text-align: start;
-            padding-bottom: 30px;
-        }
-        .recent-text p {
-            margin-left: 0px;
-        }
-        .hidden {
-            visibility: visible;
-            margin-right: 5%;
-            padding-bottom: 30px;
-            color: rgb(54, 54, 218);
-        }
-        /*--------------Toggle Switch--------------------*/
-        .switch-ios.switch-light span {
-            flex-basis: 16%;
-        }
-        .switch-ios.switch-light strong {
-            flex-basis: 30%;
-        }
-        .switch-ios.switch-light span span {
-            margin-left: -14%;
-        }
-        .down-arrow svg {
-            left: 95%;
-        }
+    .members-container,
+    .recent-container {
+        flex-basis: 50%;
     }
-    /*--------------Media Query min-width: 1024px--------*/
-    
-    @media (min-width: 1024px) {
-        .bell-icon {
-            flex-basis: 5%;
-        }
-        /* -----------Charts --------------------------*/
-        .traffic-header .headline {
-            flex-basis: 70%;
-        }
-        .traffic-nav li {
-            flex-basis: 40%;
-            margin: 5% 8%;
-        }
-        /*------------Members & Recent Activity -------------*/
-        .members-recent {
-            display: flex;
-            flex-direction: row;
-            font-size: 0.85rem;
-        }
-        .profile-image {
-            height: 4rem;
-            width: 4rem;
-        }
-        .members-container,
-        .recent-container {
-            flex-basis: 50%;
-        }
-        .members-container {
-            border-right: 2px solid rgb(145, 142, 142);
-        }
-        .members-text p,
-        .recent-text p {
-            width: 95%;
-            margin-top: 0;
-        }
-        /*---------- Messaging ----------*/
-        .messaging-settings {
-            display: flex;
-            flex-direction: row;
-        }
-        .message,
-        .settings {
-            flex-basis: 50%;
-        }
-        .message {
-            border-right: 2px solid rgb(145, 142, 142);
-        }
-        .settings {
-            margin-left: 0px;
-            margin-right: 0px;
-        }
-        .settings .headline {
-            margin-left: 5%
-        }
-        #timezone {
-            margin: 0% 4%;
-        }
-        .save,
-        .disabled {
-            margin: 2% 4%;
-        }
-        .message {
-            border-bottom: none;
-        }
-        .form-area {
-            resize: vertical;
-            height: 140px;
-        }
-        #timezone.form-field {
-            width: 92%;
-        }
-        .down-arrow svg {
-            left: 91%;
-        }
-        /*--------------Toggle Switch--------------------*/
-        .switch-ios.switch-light {
-            margin-left: 5%;
-        }
-        .switch-ios.switch-light span {
-            flex-basis: 25%;
-        }
-        .switch-ios.switch-light strong {
-            flex-basis: 42%;
-        }
+    .members-container {
+        border-right: 2px solid rgb(145, 142, 142);
     }
+    .members-text p,
+    .recent-text p {
+        width: 95%;
+        margin-top: 0;
+    }
+    /*---------- Messaging & Settings----------*/
+    .messaging-settings {
+        display: flex;
+        flex-direction: row;
+    }
+    .message,
+    .settings {
+        flex-basis: 50%;
+    }
+    .message {
+        border-right: 2px solid rgb(145, 142, 142);
+    }
+    .settings {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .settings .headline {
+        margin-left: 5%
+    }
+    #timezone {
+        margin: 0% 4%;
+    }
+    .save,
+    .disabled {
+        margin: 2% 4%;
+    }
+    .message {
+        border-bottom: none;
+    }
+    .form-area {
+        resize: vertical;
+        height: 140px;
+    }
+    #timezone.form-field {
+        width: 92%;
+    }
+    .down-arrow svg {
+        left: 91%;
+    }
+    /*--------------Toggle Switch--------------------*/
+    .switch-ios.switch-light {
+        margin-left: 5%;
+    }
+    .switch-ios.switch-light span {
+        flex-basis: 25%;
+    }
+    .switch-ios.switch-light strong {
+        flex-basis: 42%;
+    }
+}

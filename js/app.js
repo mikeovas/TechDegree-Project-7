@@ -108,7 +108,7 @@ send.addEventListener("click", (e) => {
     }
 });
 
-// Local Storage
+// ===============Local Storage of Settings ======================//
 
 const email = document.querySelector('#receiveEmail');
 const public = document.querySelector('#setPublic');
