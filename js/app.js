@@ -121,6 +121,7 @@ save.addEventListener('click', () => {
     localStorage.setItem("email", email.checked);
     localStorage.setItem("public", public.checked);
     localStorage.setItem("timezone", timezone.value);
+    alert("Your settings have been saved!")
 });
 
 cancel.addEventListener("click", () => {
