@@ -131,6 +131,8 @@ cancel.addEventListener("click", () => {
     email.checked = null;
     public.checked = null;
     timezone.value = "";
+    dropdown = document.querySelector("#timezone.form-field")
+    dropdown.value = "original"
 });
 
 
